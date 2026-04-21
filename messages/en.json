@@ -84,7 +84,7 @@
       },
       "installment": {
         "title": "Flexible Installments",
-        "description": "Budget-friendly payment plans available - your perfect smile shouldn't have to wait."
+        "description": "Split your treatment into easy monthly payments with Tabby — no interest, no stress. Your dream smile, paid your way."
       },
       "digital": {
         "title": "Digital Precision",
@@ -178,7 +178,8 @@
     "subtitle": "Join thousands of happy patients who trusted Dr. Arefeh Lotfi with their smiles. Book your consultation today.",
     "whatsapp": "WhatsApp Us Now",
     "call": "Call the Clinic",
-    "insurance": "All insurance accepted · Installment plans available"
+    "insurance": "All insurance accepted · Pay in installments with Tabby",
+    "whatsappMessage": "Hello Dr. Lotfi, I would like to book a consultation."
   },
   "footer": {
     "tagline": "Cosmetic & Digital Dentistry in Dubai",

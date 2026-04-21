@@ -28,7 +28,7 @@ export default function Hero() {
         <div className="absolute top-1/2 start-0 end-0 h-px bg-gradient-to-r from-transparent via-teal-500/20 to-transparent" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-28 pb-16 w-full">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-28 pb-28 w-full">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
 
           {/* ── LEFT: Content ── */}
@@ -118,24 +118,7 @@ export default function Hero() {
               </Button>
             </motion.div>
 
-            {/* Stats strip */}
-            <motion.div
-              className="flex flex-wrap items-center gap-x-8 gap-y-4 pt-8 border-t border-white/10"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 1.0 }}
-            >
-              {[
-                { value: '2000+', label: t('statPatients') },
-                { value: '5★', label: t('statRating') },
-                { value: '3', label: t('statLanguages') },
-              ].map(({ value, label }) => (
-                <div key={label} className="flex flex-col">
-                  <span className="text-2xl font-bold gold-text">{value}</span>
-                  <span className="text-xs text-white/50 tracking-wide">{label}</span>
-                </div>
-              ))}
-            </motion.div>
+
           </div>
 
           {/* ── RIGHT: Doctor Image ── */}
@@ -151,7 +134,7 @@ export default function Hero() {
 
               {/* Floating card – rating */}
               <motion.div
-                className="absolute start-3 sm:-start-6 top-12 z-20 bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl px-4 py-3 flex items-center gap-3"
+                className="hidden sm:flex absolute start-3 sm:-start-6 top-12 z-20 bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl px-4 py-3 items-center gap-3"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1.0, duration: 0.5 }}
@@ -169,7 +152,7 @@ export default function Hero() {
 
               {/* Floating card – experience */}
               <motion.div
-                className="absolute end-3 sm:-end-6 bottom-20 z-20 bg-primary text-white rounded-2xl shadow-2xl px-4 py-3"
+                className="hidden sm:block absolute end-3 sm:-end-6 bottom-20 z-20 bg-primary text-white rounded-2xl shadow-2xl px-4 py-3"
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1.15, duration: 0.5 }}

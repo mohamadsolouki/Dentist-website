@@ -1,9 +1,16 @@
-import { Geist, Vazirmatn } from 'next/font/google'
+import { DM_Sans, Cormorant_Garamond, Vazirmatn } from 'next/font/google'
 
-export const geist = Geist({
+export const dmSans = DM_Sans({
   subsets: ['latin'],
-  variable: '--font-geist',
+  variable: '--font-dm-sans',
   display: 'swap',
+})
+
+export const cormorant = Cormorant_Garamond({
+  subsets: ['latin'],
+  variable: '--font-cormorant',
+  display: 'swap',
+  weight: ['300', '400', '500', '600', '700'],
 })
 
 export const vazirmatn = Vazirmatn({

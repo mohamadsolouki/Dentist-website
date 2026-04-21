@@ -2,7 +2,7 @@ import { NextIntlClientProvider, hasLocale } from 'next-intl'
 import { getMessages, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { routing } from '@/i18n/routing'
-import { geist, vazirmatn } from '@/lib/fonts'
+import { dmSans, cormorant, vazirmatn } from '@/lib/fonts'
 import type { Metadata } from 'next'
 import Header from '@/components/layout/header'
 import Footer from '@/components/layout/footer'
@@ -104,9 +104,10 @@ export default async function LocaleLayout({
   const messages = await getMessages()
   const dir = rtlLocales.includes(locale) ? 'rtl' : 'ltr'
   const lang = langMap[locale]
-  const fontClass = locale === 'en'
-    ? geist.variable
-    : `${vazirmatn.variable} font-[family-name:var(--font-vazirmatn)]`
+  const fontVars = `${dmSans.variable} ${cormorant.variable} ${vazirmatn.variable}`
+  const fontClass = rtlLocales.includes(locale)
+    ? `${fontVars} font-[family-name:var(--font-vazirmatn)]`
+    : fontVars
 
   return (
     <NextIntlClientProvider messages={messages}>

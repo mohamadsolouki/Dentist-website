@@ -1,7 +1,7 @@
 'use client'
 
 import { cn } from '@/lib/utils'
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
+import { motion, useMotionValue, useSpring, useTransform, type Variants } from 'framer-motion'
 import { useRef } from 'react'
 
 interface MotionWrapperProps {
@@ -37,7 +37,7 @@ export function MotionWrapper({
       initial={initial}
       whileInView={animate}
       viewport={{ once, margin: '-80px' }}
-      transition={{ duration, delay, ease: [0.25, 0.1, 0.25, 1] }}
+      transition={{ duration, delay, ease: 'easeOut' }}
     >
       {children}
     </motion.div>
@@ -73,9 +73,9 @@ export function StaggerContainer({
   )
 }
 
-export const staggerItem = {
+export const staggerItem: Variants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
 }
 
 export function FadeIn({

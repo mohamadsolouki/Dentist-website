@@ -109,6 +109,7 @@ export default async function LocaleLayout({
   return (
     <NextIntlClientProvider messages={messages}>
       <div lang={locale} dir={dir} className={fontClass}>
+        <JsonLd />
         <Header />
         <main>{children}</main>
         <Footer />

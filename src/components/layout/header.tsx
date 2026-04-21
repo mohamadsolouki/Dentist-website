@@ -1,0 +1,164 @@
+'use client'
+
+import { useState, useEffect } from 'react'
+import Link from 'next/link'
+import { useTranslations, useLocale } from 'next-intl'
+import { motion, useScroll, useMotionValueEvent } from 'framer-motion'
+import { Menu, X } from 'lucide-react'
+import { cn } from '@/lib/utils'
+import LocaleSwitcher from '@/components/shared/locale-switcher'
+import { Button } from '@/components/ui/button'
+import { getWhatsAppLink } from '@/lib/utils'
+
+export default function Header() {
+  const t = useTranslations('nav')
+  const locale = useLocale()
+  const [scrolled, setScrolled] = useState(false)
+  const [mobileOpen, setMobileOpen] = useState(false)
+  const { scrollY } = useScroll()
+
+  useMotionValueEvent(scrollY, 'change', (latest) => {
+    setScrolled(latest > 20)
+  })
+
+  const navLinks = [
+    { href: `/${locale}`, label: t('home') },
+    { href: `/${locale}/services`, label: t('services') },
+    { href: `/${locale}/about`, label: t('about') },
+    { href: `/${locale}/gallery`, label: t('gallery') },
+    { href: `/${locale}/contact`, label: t('contact') },
+  ]
+
+  return (
+    <>
+      <motion.header
+        className={cn(
+          'fixed top-0 inset-x-0 z-40 transition-all duration-300',
+          scrolled
+            ? 'bg-white/90 backdrop-blur-md border-b border-border shadow-[var(--shadow-header)]'
+            : 'bg-transparent'
+        )}
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+      >
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex h-16 lg:h-20 items-center justify-between gap-4">
+            {/* Logo */}
+            <Link
+              href={`/${locale}`}
+              className="flex items-center gap-2 flex-shrink-0 group"
+            >
+              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-white text-sm font-bold shadow-sm group-hover:shadow-md transition-shadow">
+                AL
+              </div>
+              <div className="hidden sm:block">
+                <p className="text-sm font-bold text-foreground leading-tight">Dr. Arefeh Lotfi</p>
+                <p className="text-[10px] text-muted-foreground leading-tight tracking-wide">Cosmetic Dentist · Dubai</p>
+              </div>
+            </Link>
+
+            {/* Desktop Nav */}
+            <nav className="hidden lg:flex items-center gap-1" aria-label="Main navigation">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-primary rounded-lg hover:bg-primary/5 transition-all duration-150"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+
+            {/* Right side */}
+            <div className="flex items-center gap-3">
+              <LocaleSwitcher className="hidden sm:flex" />
+              <Button
+                size="sm"
+                variant="default"
+                className="hidden lg:inline-flex"
+                asChild
+              >
+                <a
+                  href={getWhatsAppLink('Hello, I would like to book a consultation.')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {t('bookAppointment')}
+                </a>
+              </Button>
+              {/* Mobile menu button */}
+              <button
+                className="lg:hidden p-2 rounded-lg text-foreground hover:bg-muted transition-colors"
+                onClick={() => setMobileOpen(!mobileOpen)}
+                aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+                aria-expanded={mobileOpen}
+              >
+                {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              </button>
+            </div>
+          </div>
+        </div>
+      </motion.header>
+
+      {/* Mobile Nav Overlay */}
+      <motion.div
+        className={cn(
+          'fixed inset-0 z-30 lg:hidden',
+          mobileOpen ? 'pointer-events-auto' : 'pointer-events-none'
+        )}
+        initial={false}
+        animate={mobileOpen ? { opacity: 1 } : { opacity: 0 }}
+        transition={{ duration: 0.2 }}
+      >
+        <div
+          className="absolute inset-0 bg-black/30 backdrop-blur-sm"
+          onClick={() => setMobileOpen(false)}
+        />
+        <motion.nav
+          className="absolute top-0 end-0 h-full w-72 bg-white shadow-2xl flex flex-col"
+          initial={{ x: '100%' }}
+          animate={mobileOpen ? { x: 0 } : { x: '100%' }}
+          transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+          aria-label="Mobile navigation"
+        >
+          <div className="flex items-center justify-between p-6 border-b border-border">
+            <span className="font-semibold text-foreground">Menu</span>
+            <button
+              className="p-1.5 rounded-lg hover:bg-muted transition-colors"
+              onClick={() => setMobileOpen(false)}
+              aria-label="Close menu"
+            >
+              <X className="h-5 w-5" />
+            </button>
+          </div>
+          <div className="flex-1 overflow-y-auto py-4 px-3">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setMobileOpen(false)}
+                className="flex items-center px-4 py-3 text-base font-medium text-foreground rounded-xl hover:bg-primary/5 hover:text-primary transition-all duration-150"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+          <div className="p-4 border-t border-border space-y-3">
+            <LocaleSwitcher className="w-full justify-center" />
+            <Button variant="whatsapp" size="lg" className="w-full" asChild>
+              <a
+                href={getWhatsAppLink()}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t('bookAppointment')}
+              </a>
+            </Button>
+          </div>
+        </motion.nav>
+      </motion.div>
+    </>
+  )
+}

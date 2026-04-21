@@ -1,0 +1,190 @@
+@import "tailwindcss";
+
+@theme {
+  /* ── Colors ─────────────────────────────────────────── */
+  --color-background: #F9FAFB;
+  --color-foreground: #0F172A;
+
+  --color-primary: #0F766E;
+  --color-primary-foreground: #FFFFFF;
+  --color-primary-light: #CCFBF1;
+
+  --color-gold: #B8963E;
+  --color-gold-light: #FEF3C7;
+  --color-gold-foreground: #0F172A;
+
+  --color-muted: #F1F5F9;
+  --color-muted-foreground: #64748B;
+
+  --color-card: #FFFFFF;
+  --color-card-foreground: #0F172A;
+
+  --color-border: #E2E8F0;
+  --color-input: #E2E8F0;
+  --color-ring: #0F766E;
+
+  --color-destructive: #EF4444;
+  --color-destructive-foreground: #FFFFFF;
+
+  /* ── Radius ──────────────────────────────────────────── */
+  --radius: 0.875rem;
+  --radius-sm: 0.5rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+
+  /* ── Shadows ─────────────────────────────────────────── */
+  --shadow-card: 0 1px 3px 0 rgb(0 0 0 / 0.07), 0 1px 2px -1px rgb(0 0 0 / 0.07);
+  --shadow-card-hover: 0 4px 16px 0 rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-header: 0 1px 0 0 rgb(0 0 0 / 0.06);
+
+  /* ── Typography ─────────────────────────────────────── */
+  --font-sans: var(--font-geist), var(--font-vazirmatn), system-ui, sans-serif;
+  --font-display: var(--font-geist), var(--font-vazirmatn), system-ui, sans-serif;
+
+  /* ── Transitions ────────────────────────────────────── */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ── CSS custom properties for shadcn/ui compatibility ── */
+:root {
+  --background: 249 250 251;
+  --foreground: 15 23 42;
+  --card: 255 255 255;
+  --card-foreground: 15 23 42;
+  --primary: 15 118 110;
+  --primary-foreground: 255 255 255;
+  --secondary: 241 245 249;
+  --secondary-foreground: 15 23 42;
+  --muted: 241 245 249;
+  --muted-foreground: 100 116 139;
+  --accent: 241 245 249;
+  --accent-foreground: 15 23 42;
+  --destructive: 239 68 68;
+  --destructive-foreground: 255 255 255;
+  --border: 226 232 240;
+  --input: 226 232 240;
+  --ring: 15 118 110;
+  --radius: 0.875rem;
+}
+
+/* ── Base ────────────────────────────────────────────── */
+* {
+  box-sizing: border-box;
+  border-color: theme(--color-border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: theme(--color-background);
+  color: theme(--color-foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── RTL typography corrections ──────────────────────── */
+:lang(fa),
+:lang(ar) {
+  font-family: var(--font-vazirmatn), system-ui, sans-serif;
+  line-height: 1.8;
+  letter-spacing: 0;
+}
+
+/* ── Selection ───────────────────────────────────────── */
+::selection {
+  background-color: theme(--color-primary-light);
+  color: theme(--color-primary);
+}
+
+/* ── Focus visible ───────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid theme(--color-primary);
+  outline-offset: 2px;
+}
+
+/* ── Scrollbar ───────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: theme(--color-muted);
+}
+::-webkit-scrollbar-thumb {
+  background: theme(--color-primary);
+  border-radius: 99px;
+}
+
+/* ── Gold gradient utility ───────────────────────────── */
+.gold-gradient {
+  background: linear-gradient(135deg, #B8963E 0%, #E8C97B 50%, #B8963E 100%);
+}
+
+.gold-text {
+  background: linear-gradient(135deg, #B8963E 0%, #E8C97B 50%, #B8963E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Teal gradient utility ───────────────────────────── */
+.teal-gradient {
+  background: linear-gradient(135deg, #0F766E 0%, #14b8a6 100%);
+}
+
+/* ── Glass utility ───────────────────────────────────── */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* ── Shimmer animation for placeholders ──────────────── */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    theme(--color-muted) 25%,
+    #e8edf2 50%,
+    theme(--color-muted) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+/* ── Pulse animation for WhatsApp FAB ────────────────── */
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+.pulse-ring::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #25D366;
+  animation: pulse-ring 2s ease-out infinite;
+  z-index: -1;
+}
+
+/* ── Section spacing ─────────────────────────────────── */
+.section-padding {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+}

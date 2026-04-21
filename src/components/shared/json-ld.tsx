@@ -11,7 +11,7 @@ export default function JsonLd() {
     telephone: CLINIC_PHONE_DISPLAY,
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Villa 943, Al Wasl Road, Al Manar',
+      streetAddress: 'Hoor Al Aliaa Polyclinic, Al Wasl Road, Al Manar',
       addressLocality: 'Umm Suqeim',
       addressRegion: 'Dubai',
       postalCode: '',

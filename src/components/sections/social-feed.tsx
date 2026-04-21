@@ -47,7 +47,7 @@ const platformData = [
 
 function InstagramShowcase() {
   const [posts, setPosts] = useState<InstagramPost[]>([])
-  const [scriptReady, setScriptReady] = useState(false)
+  const [scriptLoaded, setScriptLoaded] = useState(false)
 
   useEffect(() => {
     fetch('/api/instagram')
@@ -56,25 +56,26 @@ function InstagramShowcase() {
       .catch(() => setPosts([]))
   }, [])
 
-  // Process embeds whenever posts or script readiness changes
+  // Call process() after both posts are rendered AND embed.js is loaded.
+  // setTimeout gives React one extra tick to commit blockquote nodes to the DOM.
   useEffect(() => {
-    if (scriptReady && posts.length > 0) {
-      window.instgrm?.Embeds.process()
-    }
-  }, [scriptReady, posts])
+    if (!scriptLoaded || posts.length === 0) return
+    const id = setTimeout(() => window.instgrm?.Embeds.process(), 150)
+    return () => clearTimeout(id)
+  }, [scriptLoaded, posts])
 
-  const displayPosts = posts.slice(0, 3)
+  const displayPosts = posts.slice(0, 2)
 
   return (
     <>
       <Script
         src="https://www.instagram.com/embed.js"
-        strategy="lazyOnload"
-        onLoad={() => setScriptReady(true)}
+        strategy="afterInteractive"
+        onLoad={() => setScriptLoaded(true)}
       />
 
       {/* Profile header */}
-      <div className="flex items-center gap-3 mb-5">
+      <div className="flex items-center gap-3 mb-4">
         <div className="h-10 w-10 rounded-full bg-gradient-to-br from-pink-500 via-rose-500 to-orange-400 flex items-center justify-center flex-shrink-0">
           <Instagram className="h-5 w-5 text-white" />
         </div>
@@ -93,25 +94,25 @@ function InstagramShowcase() {
         </a>
       </div>
 
-      {/* Embeds — horizontal scroll on small screens, 3 across on large */}
-      <div className="overflow-x-auto pb-1 -mx-1 px-1">
-        <div className="flex gap-3 min-w-max">
-          {displayPosts.length > 0 ? displayPosts.map((post) => (
-            <div key={post.shortcode} className="w-72 flex-shrink-0">
+      {/* 2 embeds side-by-side, clipped to strip profile header + likes footer */}
+      <div className="flex gap-3">
+        {displayPosts.length > 0 ? displayPosts.map((post) => (
+          <div key={post.shortcode} className="flex-1 overflow-hidden rounded-xl h-[440px]">
+            {/* Negative top offset hides Instagram's ~70px profile header */}
+            <div className="-mt-[70px]">
+              {/* No data-instgrm-captioned → caption hidden */}
               <blockquote
                 className="instagram-media"
                 data-instgrm-permalink={`${post.permalink}?utm_source=ig_embed`}
                 data-instgrm-version="14"
-                data-instgrm-captioned
               />
             </div>
-          )) : (
-            // Shimmer placeholders while posts load
-            Array.from({ length: 3 }).map((_, i) => (
-              <div key={i} className="w-72 flex-shrink-0 h-[500px] rounded-xl shimmer" />
-            ))
-          )}
-        </div>
+          </div>
+        )) : (
+          Array.from({ length: 2 }).map((_, i) => (
+            <div key={i} className="flex-1 h-[440px] rounded-xl shimmer" />
+          ))
+        )}
       </div>
 
       {/* Follow CTA */}

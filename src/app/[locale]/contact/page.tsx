@@ -79,7 +79,7 @@ export default function ContactPage() {
                   {
                     icon: MapPin,
                     label: t('info.address'),
-                    value: 'Villa 943, Al Wasl Road, Al Manar, Umm Suqeim, Dubai',
+                    value: 'Hoor Al Aliaa Polyclinic, Al Wasl Road, Al Manar, Umm Suqeim, Dubai',
                     href: GOOGLE_MAPS_URL,
                     hrefLabel: t('info.getDirections'),
                   },

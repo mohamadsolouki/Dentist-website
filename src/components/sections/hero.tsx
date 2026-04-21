@@ -48,7 +48,7 @@ export default function Hero() {
 
             {/* Headline */}
             <motion.h1
-              className="text-5xl sm:text-6xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-white leading-[1.05] mb-6"
+              className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-white leading-[1.05] mb-6"
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.65, delay: 0.2 }}
@@ -97,12 +97,12 @@ export default function Hero() {
 
             {/* CTAs */}
             <motion.div
-              className="flex flex-col sm:flex-row items-start gap-3 mb-10"
+              className="flex flex-col sm:flex-row items-stretch sm:items-start gap-3 mb-10"
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.85 }}
             >
-              <Button size="xl" variant="whatsapp" asChild>
+              <Button size="xl" variant="whatsapp" className="w-full sm:w-auto" asChild>
                 <a
                   href={getWhatsAppLink('Hello Dr. Lotfi, I would like to book a consultation.')}
                   target="_blank"
@@ -111,7 +111,7 @@ export default function Hero() {
                   {t('cta1')}
                 </a>
               </Button>
-              <Button size="xl" variant="outline" className="border-white/30 text-white hover:bg-white/10 hover:border-white/50" asChild>
+              <Button size="xl" variant="outline" className="w-full sm:w-auto border-white/30 text-white hover:bg-white/10 hover:border-white/50" asChild>
                 <Link href="/services">
                   {t('cta2')}
                 </Link>
@@ -151,7 +151,7 @@ export default function Hero() {
 
               {/* Floating card – rating */}
               <motion.div
-                className="absolute -start-6 top-12 z-20 bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl px-4 py-3 flex items-center gap-3"
+                className="absolute start-3 sm:-start-6 top-12 z-20 bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl px-4 py-3 flex items-center gap-3"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1.0, duration: 0.5 }}
@@ -169,7 +169,7 @@ export default function Hero() {
 
               {/* Floating card – experience */}
               <motion.div
-                className="absolute -end-6 bottom-20 z-20 bg-primary text-white rounded-2xl shadow-2xl px-4 py-3"
+                className="absolute end-3 sm:-end-6 bottom-20 z-20 bg-primary text-white rounded-2xl shadow-2xl px-4 py-3"
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1.15, duration: 0.5 }}

@@ -26,13 +26,17 @@ function TikTokIcon({ className }: { className?: string }) {
 export default function ContactPage() {
   const t = useTranslations('contactPage')
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+  const nameMin = t('form.validation.nameMin')
+  const emailInvalid = t('form.validation.emailInvalid')
+  const phoneInvalid = t('form.validation.phoneInvalid')
+  const messageMin = t('form.validation.messageMin')
   const schema = useMemo(() => z.object({
-    name: z.string().min(2, t('form.validation.nameMin')),
-    email: z.string().email(t('form.validation.emailInvalid')),
-    phone: z.string().min(7, t('form.validation.phoneInvalid')),
+    name: z.string().min(2, nameMin),
+    email: z.string().email(emailInvalid),
+    phone: z.string().min(7, phoneInvalid),
     service: z.string().optional(),
-    message: z.string().min(10, t('form.validation.messageMin')),
-  }), [t])
+    message: z.string().min(10, messageMin),
+  }), [nameMin, emailInvalid, phoneInvalid, messageMin])
   type FormData = z.infer<typeof schema>
 
   const {

@@ -30,7 +30,7 @@ export default function CtaBanner() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button size="xl" variant="whatsapp" asChild>
               <a
-                href={getWhatsAppLink('Hello Dr. Lotfi, I would like to book a consultation.')}
+                href={getWhatsAppLink(t('whatsappMessage'))}
                 target="_blank"
                 rel="noopener noreferrer"
               >

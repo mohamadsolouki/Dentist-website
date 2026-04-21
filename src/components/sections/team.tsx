@@ -10,7 +10,7 @@ export default function Team() {
   const credentials = [
     { icon: GraduationCap, text: t('credentials') },
     { icon: Award, text: t('clinicName') },
-    { icon: Languages, text: 'English · فارسی · العربية' },
+    { icon: Languages, text: t('languages') },
   ]
 
   return (
@@ -33,7 +33,7 @@ export default function Team() {
               <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
                   src="/images/dr-lotfi-2.png"
-                  alt="Dr. Arefeh Lotfi – Cosmetic Dentist Dubai"
+                  alt={t('imageAlt')}
                   fill
                   className="object-cover object-top"
                   sizes="(max-width: 1024px) 100vw, 384px"
@@ -46,7 +46,7 @@ export default function Team() {
           <MotionWrapper direction="right">
             <div className="space-y-6">
               <div>
-                <h3 className="text-2xl lg:text-3xl font-bold text-foreground">Dr. Arefeh Lotfi</h3>
+                <h3 className="text-2xl lg:text-3xl font-bold text-foreground">{t('title')}</h3>
                 <p className="text-primary font-medium mt-1">{t('credentials')}</p>
               </div>
 

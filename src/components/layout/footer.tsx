@@ -136,13 +136,13 @@ export default function Footer() {
               ))}
             </div>
             <a
-              href={getWhatsAppLink('Hello, I would like to book a consultation.')}
+              href={getWhatsAppLink(t('whatsappMessage'))}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 mt-2 px-4 py-2.5 rounded-xl bg-[#25D366] text-white text-sm font-semibold hover:bg-[#20BA5C] transition-colors"
             >
               <MessageCircle className="h-4 w-4" />
-              WhatsApp Us
+              {t('whatsappCta')}
             </a>
           </div>
         </div>
@@ -153,7 +153,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Dr. Arefeh Lotfi. {t('rights')}
           </p>
           <p className="text-xs text-white/40">
-            Designed & developed by{' '}
+            {t('designedBy')}{' '}
             <a
               href="https://hitalabs.com"
               target="_blank"

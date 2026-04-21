@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 
-// No API token required — shortcodes are extracted from the public post URLs.
+// No API token required - shortcodes are extracted from the public post URLs.
 // Instagram's /embed/ iframe URL works in all browsers without any API access.
 const POST_URLS: string[] = (process.env.INSTAGRAM_POST_URLS ?? '')
   .split(',')

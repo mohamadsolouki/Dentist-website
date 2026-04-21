@@ -1,0 +1,293 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "gallery": "Gallery",
+    "contact": "Contact",
+    "bookAppointment": "Book Appointment"
+  },
+  "hero": {
+    "badge": "⭐ 5-Star Rated Dentist in Dubai",
+    "headline1": "Your Perfect",
+    "headline2": "Smile Starts",
+    "headline3": "Here.",
+    "subheadline": "Cosmetic & digital dentistry with a personal touch — from Hollywood Smiles to advanced implants, crafted for you in the heart of Dubai.",
+    "cta1": "Book Appointment",
+    "cta2": "Explore Services",
+    "scrollHint": "Scroll to explore"
+  },
+  "stats": {
+    "patients": "Happy Patients",
+    "patientsValue": "2000",
+    "years": "Years of Excellence",
+    "yearsValue": "10",
+    "services": "Services Offered",
+    "servicesValue": "30",
+    "rating": "Google Rating",
+    "ratingValue": "5.0"
+  },
+  "services": {
+    "badge": "What We Offer",
+    "title": "World-Class Dental Services",
+    "subtitle": "From Hollywood Smiles to advanced digital dentistry — every treatment is tailored to give you lasting results and a confident smile.",
+    "items": {
+      "hollywoodSmile": {
+        "title": "Hollywood Smile",
+        "description": "Complete smile makeover combining veneers, whitening, and contouring for a naturally radiant, camera-ready smile."
+      },
+      "veneers": {
+        "title": "Porcelain Veneers",
+        "description": "Ultra-thin, custom-crafted porcelain shells that transform shape, color, and size — minimally invasive perfection."
+      },
+      "whitening": {
+        "title": "Teeth Whitening",
+        "description": "Professional whitening with the Beyond Brand device from the USA — up to 8 shades lighter in a single session."
+      },
+      "digital": {
+        "title": "Digital Dentistry",
+        "description": "Precision treatments using the latest digital scanning, planning, and fabrication technology for unmatched accuracy."
+      },
+      "smileDesign": {
+        "title": "Smile Design",
+        "description": "Art meets science — a comprehensive digital simulation of your new smile before any treatment begins."
+      },
+      "implants": {
+        "title": "Dental Implants",
+        "description": "Permanent, natural-looking tooth replacements anchored to your jaw — restoring function and confidence."
+      }
+    },
+    "learnMore": "Learn More",
+    "viewAll": "View All Services"
+  },
+  "why": {
+    "badge": "Why Choose Dr. Lotfi",
+    "title": "Dentistry as an Art & Science",
+    "subtitle": "A unique blend of technical excellence, artistic vision, and genuine care — setting new standards for dental experiences in Dubai.",
+    "items": {
+      "insurance": {
+        "title": "All Insurance Accepted",
+        "description": "We accept all major medical insurance plans, making quality dental care accessible for everyone."
+      },
+      "installment": {
+        "title": "Flexible Installments",
+        "description": "Budget-friendly payment plans available — your perfect smile shouldn't have to wait."
+      },
+      "digital": {
+        "title": "Digital Precision",
+        "description": "State-of-the-art digital dentistry tools ensure accuracy, comfort, and stunning results every time."
+      },
+      "multilingual": {
+        "title": "Multilingual Care",
+        "description": "Consultations in English, Farsi, and Arabic — so you always feel heard and understood."
+      }
+    }
+  },
+  "beforeAfter": {
+    "badge": "Transformations",
+    "title": "Real Results, Real Smiles",
+    "subtitle": "See the life-changing transformations our patients experience at Dr. Lotfi's clinic.",
+    "before": "Before",
+    "after": "After",
+    "disclaimer": "* Results may vary. Images shown with patient consent."
+  },
+  "social": {
+    "badge": "Follow the Journey",
+    "title": "Dr. Lotfi on Social Media",
+    "subtitle": "Behind the scenes of dentistry, travel, music, and life in Dubai — follow along on Instagram, TikTok, and YouTube.",
+    "instagram": "Instagram",
+    "tiktok": "TikTok",
+    "youtube": "YouTube",
+    "followOn": "Follow on",
+    "viewProfile": "View Profile",
+    "latestPosts": "Latest Posts",
+    "noToken": "Follow @drarefehlotfi on Instagram for the latest posts and smile transformations."
+  },
+  "testimonials": {
+    "badge": "Patient Stories",
+    "title": "What Our Patients Say",
+    "subtitle": "Real experiences from real patients who trusted Dr. Lotfi with their smiles.",
+    "items": [
+      {
+        "name": "Sarah M.",
+        "location": "Dubai, UAE",
+        "text": "Dr. Arefeh transformed my smile completely! The Hollywood Smile procedure was painless and the results are beyond what I imagined. I couldn't be happier.",
+        "service": "Hollywood Smile",
+        "rating": 5
+      },
+      {
+        "name": "Mohammed Al-Rashid",
+        "location": "Abu Dhabi, UAE",
+        "text": "Flew in from Abu Dhabi specifically for Dr. Lotfi. The digital dentistry approach is impressive — she showed me the final result digitally before we even started. Professional and caring.",
+        "service": "Dental Implants",
+        "rating": 5
+      },
+      {
+        "name": "Anna K.",
+        "location": "Austria",
+        "text": "Travelled from Austria and completed 20 porcelain veneers in just 5 days. The clinic is beautiful, Dr. Lotfi is an artist, and my smile is absolutely stunning.",
+        "service": "Porcelain Veneers",
+        "rating": 5
+      },
+      {
+        "name": "Fatima Hassan",
+        "location": "Dubai, UAE",
+        "text": "The whitening session with the Beyond Brand device was incredible. 8 shades whiter in one session! Dr. Lotfi makes you feel so comfortable throughout.",
+        "service": "Teeth Whitening",
+        "rating": 5
+      }
+    ]
+  },
+  "team": {
+    "badge": "Meet Your Doctor",
+    "title": "Dr. Arefeh Lotfi",
+    "credentials": "Cosmetic & Digital Dentist | Dubai, UAE",
+    "bio": "Dr. Arefeh Lotfi is a Dubai-based cosmetic and digital dentist at Medicazone clinic, known for her artistic approach to smile design and passion for transforming lives through beautiful smiles. Beyond the clinic, she is a pianist, globetrotter, horse rider, and social media influencer — bringing the same creativity and precision to everything she does.",
+    "clinicName": "Medicazone Dental Clinic",
+    "clinicAddress": "Villa 943, Al Wasl Road, Umm Suqeim, Dubai",
+    "specialties": ["Hollywood Smile", "Porcelain Veneers", "Digital Dentistry", "Smile Design", "Teeth Whitening"],
+    "bookWith": "Book with Dr. Lotfi"
+  },
+  "cta": {
+    "badge": "Ready for Your Transformation?",
+    "title": "Your Dream Smile Is One Appointment Away",
+    "subtitle": "Join thousands of happy patients who trusted Dr. Arefeh Lotfi with their smiles. Book your consultation today.",
+    "whatsapp": "WhatsApp Us Now",
+    "call": "Call the Clinic",
+    "insurance": "All insurance accepted · Installment plans available"
+  },
+  "footer": {
+    "tagline": "Cosmetic & Digital Dentistry in Dubai",
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "followUs": "Follow Us",
+    "address": "Villa 943, Al Wasl Road, Al Manar, Umm Suqeim, Dubai",
+    "phone": "+971 55 772 5086",
+    "whatsapp": "+971 56 422 0620",
+    "rights": "All rights reserved.",
+    "madeWith": "Crafted with care in Dubai"
+  },
+  "servicesPage": {
+    "badge": "Our Services",
+    "title": "Complete Dental Care",
+    "subtitle": "From a routine cleaning to a full smile makeover — every service is delivered with precision, care, and artistry.",
+    "insurance": {
+      "title": "Insurance & Payment",
+      "description": "We accept all major medical insurance plans. Flexible installment payment options are also available — making your perfect smile truly accessible.",
+      "badge": "All Insurance Accepted"
+    },
+    "items": {
+      "hollywoodSmile": {
+        "title": "Hollywood Smile",
+        "description": "A complete smile makeover combining porcelain veneers, whitening, and contouring. Digitally planned and precisely executed for a naturally perfect result."
+      },
+      "veneers": {
+        "title": "Porcelain Veneers",
+        "description": "Ultra-thin porcelain shells custom-crafted to your smile. Ideal for correcting shape, color, size, and alignment with minimal tooth reduction."
+      },
+      "whitening": {
+        "title": "Teeth Whitening",
+        "description": "Professional whitening using the Beyond Brand device from the USA — the gold standard for safe, effective, and lasting teeth whitening."
+      },
+      "digital": {
+        "title": "Digital Dentistry",
+        "description": "Advanced digital scanning, digital smile design (DSD), and CAD/CAM fabrication for treatments that are precise, fast, and comfortable."
+      },
+      "smileDesign": {
+        "title": "Smile Design",
+        "description": "A detailed digital preview of your new smile before any treatment. You approve the final look — no surprises."
+      },
+      "implants": {
+        "title": "Dental Implants",
+        "description": "Titanium implants that permanently replace missing teeth, looking and feeling like natural teeth. Built to last a lifetime."
+      },
+      "cosmetic": {
+        "title": "Cosmetic Dentistry",
+        "description": "Full range of cosmetic services including bonding, contouring, gum reshaping, and combination treatments for total smile enhancement."
+      },
+      "emergency": {
+        "title": "Emergency Dental Care",
+        "description": "Same-day appointments for dental emergencies — toothache, chipped teeth, lost crowns, and more. We're here when you need us most."
+      }
+    },
+    "bookService": "Book This Service"
+  },
+  "aboutPage": {
+    "badge": "About Dr. Lotfi",
+    "heroTitle": "Where Art Meets Dentistry",
+    "heroSubtitle": "A passion for beautiful smiles, backed by the latest digital technology and a genuine care for every patient.",
+    "storyTitle": "The Story",
+    "storyText1": "Dr. Arefeh Lotfi is a cosmetic and digital dentist practicing at Medicazone clinic in Umm Suqeim, Dubai. With a philosophy that dentistry is both an art and a science, she brings a creative, detail-oriented approach to every smile she designs.",
+    "storyText2": "Known for her warm, multilingual consultations in English, Farsi, and Arabic, Dr. Lotfi has built a reputation as one of Dubai's most sought-after cosmetic dentists — treating patients who travel from across the UAE and internationally.",
+    "storyText3": "Beyond the clinic, Dr. Lotfi is a pianist, world traveler, horse rider, and social media influencer — bringing the same creativity, precision, and passion to everything she does.",
+    "valuesTitle": "Our Values",
+    "values": {
+      "artistry": { "title": "Artistry", "description": "Every smile is a unique canvas. We combine aesthetics with science for results that look completely natural." },
+      "technology": { "title": "Technology", "description": "Digital Smile Design and CAD/CAM technology mean we plan perfectly before we treat." },
+      "care": { "title": "Genuine Care", "description": "We listen first. Your goals, your concerns, your comfort — always the priority." },
+      "accessibility": { "title": "Accessibility", "description": "All insurance accepted and flexible installments available so everyone can access quality dental care." }
+    },
+    "clinicTitle": "The Clinic",
+    "clinicName": "Medicazone",
+    "clinicAddress": "Villa 943, Al Wasl Road, Al Manar, Umm Suqeim, Dubai",
+    "clinicHours": "Open Daily · Closes at 7:00 PM",
+    "wheelchair": "Wheelchair Accessible"
+  },
+  "galleryPage": {
+    "badge": "Gallery",
+    "title": "Smile Transformations",
+    "subtitle": "A showcase of real results — before and after, smile designs, and clinic highlights.",
+    "filters": {
+      "all": "All",
+      "hollywoodSmile": "Hollywood Smile",
+      "veneers": "Veneers",
+      "whitening": "Whitening",
+      "implants": "Implants",
+      "clinic": "Clinic"
+    }
+  },
+  "contactPage": {
+    "badge": "Get in Touch",
+    "title": "Book Your Consultation",
+    "subtitle": "Ready to transform your smile? Reach out via WhatsApp, call us, or fill in the form below.",
+    "form": {
+      "name": "Full Name",
+      "namePlaceholder": "Your full name",
+      "email": "Email Address",
+      "emailPlaceholder": "your@email.com",
+      "phone": "Phone Number",
+      "phonePlaceholder": "+971 XX XXX XXXX",
+      "service": "Service of Interest",
+      "servicePlaceholder": "Select a service",
+      "message": "Message",
+      "messagePlaceholder": "Tell us about your goals, questions, or preferred appointment time...",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent! We'll be in touch shortly.",
+      "error": "Something went wrong. Please try WhatsApp or call us directly."
+    },
+    "info": {
+      "address": "Address",
+      "phone": "Phone",
+      "whatsapp": "WhatsApp",
+      "hours": "Working Hours",
+      "hoursValue": "Open Daily · Closes 7:00 PM",
+      "getDirections": "Get Directions",
+      "chatWhatsApp": "Chat on WhatsApp"
+    },
+    "social": "Connect on Social"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong.",
+    "retry": "Try again",
+    "close": "Close",
+    "open": "Open",
+    "menu": "Menu",
+    "back": "Back",
+    "readMore": "Read More",
+    "viewAll": "View All",
+    "whatsappUs": "WhatsApp Us",
+    "callUs": "Call Us"
+  }
+}

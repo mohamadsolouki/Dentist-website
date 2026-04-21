@@ -95,9 +95,9 @@ function InstagramShowcase() {
       </div>
 
       {/* 2 embeds side-by-side, clipped to strip profile header + likes footer */}
-      <div className="flex gap-3">
-        {displayPosts.length > 0 ? displayPosts.map((post) => (
-          <div key={post.shortcode} className="flex-1 overflow-hidden rounded-xl h-[440px]">
+      <div className="flex flex-col sm:flex-row gap-3">
+        {displayPosts.length > 0 ? displayPosts.map((post, idx) => (
+          <div key={post.shortcode} className={`overflow-hidden rounded-xl h-[440px] sm:flex-1 ${idx === 1 ? 'hidden sm:block' : ''}`}>
             {/* Negative top offset hides Instagram's ~70px profile header */}
             <div className="-mt-[70px]">
               {/* No data-instgrm-captioned → caption hidden */}
@@ -110,7 +110,7 @@ function InstagramShowcase() {
           </div>
         )) : (
           Array.from({ length: 2 }).map((_, i) => (
-            <div key={i} className="flex-1 h-[440px] rounded-xl shimmer" />
+            <div key={i} className={`h-[440px] rounded-xl shimmer sm:flex-1 ${i === 1 ? 'hidden sm:block' : ''}`} />
           ))
         )}
       </div>

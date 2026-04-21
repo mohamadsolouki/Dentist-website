@@ -66,7 +66,8 @@ export default function StatsBar() {
                 key={label}
                 className={cn(
                   'flex flex-col items-center justify-center py-8 lg:py-10 text-center',
-                  !isLast && 'border-e border-border'
+                  !isLast && 'border-e border-border',
+                  i < 2 && 'border-b lg:border-b-0 border-border'
                 )}
               >
                 <span className="text-3xl lg:text-4xl font-bold text-primary tabular-nums">

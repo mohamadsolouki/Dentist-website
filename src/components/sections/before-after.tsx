@@ -69,7 +69,7 @@ export default function BeforeAfter() {
               {t('after')}
             </div>
           </div>
-          <p className="text-center text-xs text-muted-foreground mt-3">{t('hint')}</p>
+          <p className="text-center text-xs text-muted-foreground mt-3">{t('disclaimer')}</p>
         </MotionWrapper>
       </div>
     </section>

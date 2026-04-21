@@ -8,9 +8,9 @@ export default function Team() {
   const t = useTranslations('team')
 
   const credentials = [
-    { icon: GraduationCap, text: t('credentials.degree') },
-    { icon: Award, text: t('credentials.specialty') },
-    { icon: Languages, text: t('credentials.languages') },
+    { icon: GraduationCap, text: t('credentials') },
+    { icon: Award, text: t('clinicName') },
+    { icon: Languages, text: 'English · فارسی · العربية' },
   ]
 
   return (
@@ -38,7 +38,7 @@ export default function Team() {
             <div className="space-y-6">
               <div>
                 <h3 className="text-2xl lg:text-3xl font-bold text-foreground">Dr. Arefeh Lotfi</h3>
-                <p className="text-primary font-medium mt-1">{t('role')}</p>
+                <p className="text-primary font-medium mt-1">{t('credentials')}</p>
               </div>
 
               <p className="text-muted-foreground leading-relaxed">{t('bio')}</p>

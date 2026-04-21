@@ -7,6 +7,7 @@ import type { Metadata } from 'next'
 import Header from '@/components/layout/header'
 import Footer from '@/components/layout/footer'
 import WhatsAppFab from '@/components/layout/whatsapp-fab'
+import JsonLd from '@/components/shared/json-ld'
 
 export async function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))

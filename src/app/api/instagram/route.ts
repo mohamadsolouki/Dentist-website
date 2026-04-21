@@ -1,41 +1,36 @@
 import { NextResponse } from 'next/server'
 
-export const revalidate = 3600 // revalidate every hour
+// No API token required — shortcodes are extracted from the public post URLs.
+// Instagram's /embed/ iframe URL works in all browsers without any API access.
+const POST_URLS: string[] = (process.env.INSTAGRAM_POST_URLS ?? '')
+  .split(',')
+  .map((u) => u.trim())
+  .filter(Boolean)
+
+export type InstagramPost = {
+  shortcode: string
+  permalink: string
+  embedUrl: string
+}
+
+/** Extract the shortcode from any instagram.com/p/ or /reel/ URL */
+function extractShortcode(url: string): string | null {
+  const match = url.match(/instagram\.com\/(?:p|reel|tv)\/([A-Za-z0-9_-]+)/)
+  return match?.[1] ?? null
+}
 
 export async function GET() {
-  const token = process.env.INSTAGRAM_ACCESS_TOKEN
-
-  if (!token) {
-    // Return placeholder data when token is not configured
-    return NextResponse.json({
-      data: Array.from({ length: 9 }, (_, i) => ({
-        id: `placeholder-${i}`,
-        media_url: null,
-        thumbnail_url: null,
-        permalink: 'https://www.instagram.com/drarefehlotfi',
-        media_type: 'IMAGE',
-        caption: 'Follow @drarefehlotfi on Instagram',
-      })),
-      placeholder: true,
+  const data: InstagramPost[] = POST_URLS
+    .map((url) => {
+      const shortcode = extractShortcode(url)
+      if (!shortcode) return null
+      return {
+        shortcode,
+        permalink: url,
+        embedUrl: `https://www.instagram.com/reel/${shortcode}/embed/`,
+      } satisfies InstagramPost
     })
-  }
+    .filter((p): p is InstagramPost => p !== null)
 
-  try {
-    const fields = 'id,media_url,thumbnail_url,permalink,media_type,caption,timestamp'
-    const url = `https://graph.instagram.com/me/media?fields=${fields}&limit=9&access_token=${token}`
-    const res = await fetch(url, { next: { revalidate: 3600 } })
-
-    if (!res.ok) {
-      throw new Error(`Instagram API error: ${res.status}`)
-    }
-
-    const data = await res.json()
-    return NextResponse.json(data)
-  } catch (error) {
-    console.error('Instagram API fetch failed:', error)
-    return NextResponse.json(
-      { error: 'Failed to fetch Instagram posts', data: [] },
-      { status: 502 }
-    )
-  }
+  return NextResponse.json({ data })
 }

@@ -5,10 +5,10 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export const WHATSAPP_NUMBER = '971564220620'
+export const WHATSAPP_NUMBER = '971557725086'
 export const CLINIC_PHONE = '+971557725086'
 export const CLINIC_PHONE_DISPLAY = '+971 55 772 5086'
-export const WHATSAPP_DISPLAY = '+971 56 422 0620'
+export const WHATSAPP_DISPLAY = '+971 55 772 5086'
 export const CLINIC_ADDRESS = 'Villa 943, Al Wasl Road, Al Manar, Umm Suqeim, Dubai'
 export const CLINIC_NAME = 'Hoor Al Aliaa Dental Clinic'
 export const GOOGLE_MAPS_URL = 'https://maps.app.goo.gl/11UrtwcRo5EMfYN58'

@@ -48,7 +48,7 @@ export default function ContactPage() {
     setStatus('loading')
     // Build a WhatsApp message with form data as fallback (no backend yet)
     const msg = `New inquiry from ${data.name}%0AEmail: ${data.email}%0APhone: ${data.phone}%0AService: ${data.service || 'General'}%0AMessage: ${data.message}`
-    window.open(`https://wa.me/971564220620?text=${msg}`, '_blank')
+    window.open(`https://wa.me/971557725086?text=${msg}`, '_blank')
     setStatus('success')
     reset()
   }

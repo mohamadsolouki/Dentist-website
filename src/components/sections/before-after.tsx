@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl'
 import { useRef, useState } from 'react'
+import Image from 'next/image'
 import SectionHeader from '@/components/shared/section-header'
 import { MotionWrapper } from '@/components/shared/motion-wrapper'
 
@@ -36,17 +37,32 @@ export default function BeforeAfter() {
             onMouseMove={(e) => handleMove(e.clientX)}
             onTouchMove={(e) => handleMove(e.touches[0].clientX)}
           >
-            {/* AFTER (full width) */}
-            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-r from-teal-50 to-teal-100">
-              <span className="text-muted-foreground text-sm">After Photo</span>
+            {/* AFTER (full width base layer) */}
+            <div className="absolute inset-0">
+              <Image
+                src="/images/after-smile.png"
+                alt="After dental treatment"
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 768px) 100vw, 768px"
+                priority
+              />
             </div>
-            {/* BEFORE (clipped) */}
+            {/* BEFORE (clipped left side) */}
             <div
-              className="absolute inset-0 overflow-hidden flex items-center justify-center bg-gradient-to-r from-slate-100 to-slate-200"
+              className="absolute inset-0 overflow-hidden"
               style={{ width: `${sliderPos}%` }}
             >
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-muted-foreground text-sm">Before Photo</span>
+              {/* inner div must fill the full container width so the image isn't squished */}
+              <div className="absolute top-0 left-0 bottom-0" style={{ width: containerRef.current?.clientWidth ?? '100%' }}>
+                <Image
+                  src="/images/before-smile.png"
+                  alt="Before dental treatment"
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width: 768px) 100vw, 768px"
+                  priority
+                />
               </div>
             </div>
             {/* Divider line */}

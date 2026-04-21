@@ -1,11 +1,20 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
+import { useState, useEffect } from 'react'
+import Script from 'next/script'
 import { Instagram, Youtube, ExternalLink } from 'lucide-react'
 import SectionHeader from '@/components/shared/section-header'
 import { MotionWrapper, StaggerContainer, staggerItem } from '@/components/shared/motion-wrapper'
 import { SOCIAL_LINKS } from '@/lib/utils'
 import { motion } from 'framer-motion'
+import type { InstagramPost } from '@/app/api/instagram/route'
+
+declare global {
+  interface Window {
+    instgrm?: { Embeds: { process: () => void } }
+  }
+}
 
 function TikTokIcon({ className }: { className?: string }) {
   return (
@@ -17,21 +26,10 @@ function TikTokIcon({ className }: { className?: string }) {
 
 const platformData = [
   {
-    key: 'instagram',
-    handle: '@drarefehlotfi',
-    url: SOCIAL_LINKS.instagram,
-    Icon: Instagram,
-    color: 'from-pink-500 to-purple-600',
-    bg: 'bg-gradient-to-br from-pink-50 to-purple-50',
-    border: 'border-pink-100',
-    iconColor: 'text-pink-600',
-  },
-  {
     key: 'tiktok',
     handle: '@dr.arefehlotfi',
     url: SOCIAL_LINKS.tiktok,
     Icon: TikTokIcon,
-    color: 'from-slate-800 to-slate-950',
     bg: 'bg-slate-50',
     border: 'border-slate-100',
     iconColor: 'text-slate-800',
@@ -41,28 +39,92 @@ const platformData = [
     handle: '@dr.arefehlotfi',
     url: SOCIAL_LINKS.youtube,
     Icon: Youtube,
-    color: 'from-red-500 to-red-700',
     bg: 'bg-red-50',
     border: 'border-red-100',
     iconColor: 'text-red-600',
   },
 ]
 
-// Instagram grid placeholders (9 cells)
-function InstagramGrid() {
+function InstagramShowcase() {
+  const [posts, setPosts] = useState<InstagramPost[]>([])
+  const [scriptReady, setScriptReady] = useState(false)
+
+  useEffect(() => {
+    fetch('/api/instagram')
+      .then((r) => r.json())
+      .then((json) => setPosts(json.data ?? []))
+      .catch(() => setPosts([]))
+  }, [])
+
+  // Process embeds whenever posts or script readiness changes
+  useEffect(() => {
+    if (scriptReady && posts.length > 0) {
+      window.instgrm?.Embeds.process()
+    }
+  }, [scriptReady, posts])
+
+  const displayPosts = posts.slice(0, 3)
+
   return (
-    <div className="grid grid-cols-3 gap-1.5">
-      {Array.from({ length: 9 }).map((_, i) => (
-        <div
-          key={i}
-          className="aspect-square rounded-lg bg-muted overflow-hidden relative shimmer"
-        >
-          <div className="absolute inset-0 flex items-center justify-center text-muted-foreground">
-            <Instagram className="h-5 w-5 opacity-20" />
-          </div>
+    <>
+      <Script
+        src="https://www.instagram.com/embed.js"
+        strategy="lazyOnload"
+        onLoad={() => setScriptReady(true)}
+      />
+
+      {/* Profile header */}
+      <div className="flex items-center gap-3 mb-5">
+        <div className="h-10 w-10 rounded-full bg-gradient-to-br from-pink-500 via-rose-500 to-orange-400 flex items-center justify-center flex-shrink-0">
+          <Instagram className="h-5 w-5 text-white" />
         </div>
-      ))}
-    </div>
+        <div>
+          <p className="font-semibold text-sm text-foreground">@drarefehlotfi</p>
+          <p className="text-xs text-muted-foreground">Hoor Al Aliaa Dental Clinic · Dubai</p>
+        </div>
+        <a
+          href={SOCIAL_LINKS.instagram}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="ms-auto inline-flex items-center gap-1 text-xs text-primary hover:underline font-medium shrink-0"
+        >
+          <ExternalLink className="h-3 w-3" />
+          Follow
+        </a>
+      </div>
+
+      {/* Embeds — horizontal scroll on small screens, 3 across on large */}
+      <div className="overflow-x-auto pb-1 -mx-1 px-1">
+        <div className="flex gap-3 min-w-max">
+          {displayPosts.length > 0 ? displayPosts.map((post) => (
+            <div key={post.shortcode} className="w-72 flex-shrink-0">
+              <blockquote
+                className="instagram-media"
+                data-instgrm-permalink={`${post.permalink}?utm_source=ig_embed`}
+                data-instgrm-version="14"
+                data-instgrm-captioned
+              />
+            </div>
+          )) : (
+            // Shimmer placeholders while posts load
+            Array.from({ length: 3 }).map((_, i) => (
+              <div key={i} className="w-72 flex-shrink-0 h-[500px] rounded-xl shimmer" />
+            ))
+          )}
+        </div>
+      </div>
+
+      {/* Follow CTA */}
+      <a
+        href={SOCIAL_LINKS.instagram}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-4 w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-gradient-to-r from-pink-500 via-rose-500 to-orange-400 text-white text-sm font-semibold hover:opacity-90 transition-opacity duration-200"
+      >
+        <Instagram className="h-4 w-4" />
+        Follow on Instagram
+      </a>
+    </>
   )
 }
 
@@ -80,30 +142,15 @@ export default function SocialFeed() {
         />
 
         <div className="grid lg:grid-cols-3 gap-6">
-          {/* Instagram grid — takes 2/3 width */}
-          <MotionWrapper className="lg:col-span-2 rounded-2xl border border-border bg-card p-5 shadow-[var(--shadow-card)]">
-            <div className="flex items-center justify-between mb-4">
-              <div className="flex items-center gap-2">
-                <Instagram className="h-5 w-5 text-pink-600" />
-                <span className="font-semibold text-sm text-foreground">@drarefehlotfi</span>
-              </div>
-              <a
-                href={SOCIAL_LINKS.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-xs text-primary hover:underline font-medium"
-              >
-                {t('viewProfile')}
-                <ExternalLink className="h-3 w-3" />
-              </a>
-            </div>
-            <InstagramGrid />
+          {/* Instagram embeds — spans 2 cols */}
+          <MotionWrapper className="lg:col-span-2 rounded-2xl border border-border bg-card p-5 shadow-[var(--shadow-card)] overflow-hidden">
+            <InstagramShowcase />
           </MotionWrapper>
 
-          {/* TikTok + YouTube cards stacked */}
+          {/* TikTok + YouTube cards */}
           <div className="flex flex-col gap-4">
             <StaggerContainer staggerDelay={0.1}>
-              {platformData.slice(1).map(({ key, handle, url, Icon, bg, border, iconColor }) => (
+              {platformData.map(({ key, handle, url, Icon, bg, border, iconColor }) => (
                 <motion.a
                   key={key}
                   variants={staggerItem}
@@ -112,7 +159,7 @@ export default function SocialFeed() {
                   rel="noopener noreferrer"
                   className={`flex items-center gap-4 p-5 rounded-2xl border ${border} ${bg} shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-card-hover)] transition-all duration-200 group`}
                 >
-                  <div className={`h-12 w-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-white shadow-sm`}>
+                  <div className="h-12 w-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-white shadow-sm">
                     <Icon className={`h-6 w-6 ${iconColor}`} />
                   </div>
                   <div>
@@ -124,7 +171,6 @@ export default function SocialFeed() {
               ))}
             </StaggerContainer>
 
-            {/* Follow note */}
             <div className="mt-2 p-4 rounded-xl bg-primary/5 border border-primary/10 text-sm text-muted-foreground">
               {t('noToken')}
             </div>

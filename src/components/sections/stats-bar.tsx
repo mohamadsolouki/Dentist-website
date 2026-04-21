@@ -5,12 +5,6 @@ import { useInView } from 'framer-motion'
 import { useRef, useEffect, useState } from 'react'
 import { cn } from '@/lib/utils'
 
-interface StatItem {
-  value: string
-  label: string
-  suffix?: string
-}
-
 function CountUp({ value, suffix = '', active }: { value: number; suffix: string; active: boolean }) {
   const [display, setDisplay] = useState(0)
 
@@ -50,11 +44,11 @@ export default function StatsBar() {
   const ref = useRef<HTMLDivElement>(null)
   const inView = useInView(ref, { once: true, margin: '-100px' })
 
-  const stats: StatItem[] = [
-    { value: t('patients'), label: t('patientsLabel') },
-    { value: t('experience'), label: t('experienceLabel') },
-    { value: t('services'), label: t('servicesLabel') },
-    { value: t('rating'), label: t('ratingLabel') },
+  const stats = [
+    { value: t('patientsValue') + '+', label: t('patients') },
+    { value: t('yearsValue'), label: t('years') },
+    { value: t('servicesValue') + '+', label: t('services') },
+    { value: t('ratingValue') + '★', label: t('rating') },
   ]
 
   return (

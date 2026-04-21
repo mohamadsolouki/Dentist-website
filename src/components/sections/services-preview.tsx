@@ -1,3 +1,5 @@
+'use client'
+
 import { useTranslations, useLocale } from 'next-intl'
 import Link from 'next/link'
 import { ArrowRight, Sparkles, Star, Zap, Monitor, Smile, Anchor } from 'lucide-react'
@@ -22,21 +24,21 @@ export default function ServicesPreview() {
   const locale = useLocale()
 
   const services = [
-    t('items.hollywoodSmile'),
-    t('items.veneers'),
-    t('items.whitening'),
-    t('items.digital'),
-    t('items.smileDesign'),
-    t('items.implants'),
+    t('items.hollywoodSmile.title'),
+    t('items.veneers.title'),
+    t('items.whitening.title'),
+    t('items.digital.title'),
+    t('items.smileDesign.title'),
+    t('items.implants.title'),
   ]
 
   const descs = [
-    t('items.hollywoodSmileDesc'),
-    t('items.veneersDesc'),
-    t('items.whiteningDesc'),
-    t('items.digitalDesc'),
-    t('items.smileDesignDesc'),
-    t('items.implantsDesc'),
+    t('items.hollywoodSmile.description'),
+    t('items.veneers.description'),
+    t('items.whitening.description'),
+    t('items.digital.description'),
+    t('items.smileDesign.description'),
+    t('items.implants.description'),
   ]
 
   return (

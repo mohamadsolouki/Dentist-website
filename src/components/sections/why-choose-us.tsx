@@ -1,3 +1,5 @@
+'use client'
+
 import { useTranslations } from 'next-intl'
 import { Shield, Globe, Award, Clock } from 'lucide-react'
 import SectionHeader from '@/components/shared/section-header'
@@ -18,20 +20,20 @@ export default function WhyChooseUs() {
 
   const features = [
     {
-      title: t('items.certified.title'),
-      description: t('items.certified.desc'),
+      title: t('items.insurance.title'),
+      description: t('items.insurance.description'),
+    },
+    {
+      title: t('items.installment.title'),
+      description: t('items.installment.description'),
+    },
+    {
+      title: t('items.digital.title'),
+      description: t('items.digital.description'),
     },
     {
       title: t('items.multilingual.title'),
-      description: t('items.multilingual.desc'),
-    },
-    {
-      title: t('items.premium.title'),
-      description: t('items.premium.desc'),
-    },
-    {
-      title: t('items.flexible.title'),
-      description: t('items.flexible.desc'),
+      description: t('items.multilingual.description'),
     },
   ]
 

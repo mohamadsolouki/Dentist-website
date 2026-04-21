@@ -1,3 +1,5 @@
+'use client'
+
 import { useTranslations } from 'next-intl'
 import SectionHeader from '@/components/shared/section-header'
 import ImagePlaceholder from '@/components/shared/image-placeholder'

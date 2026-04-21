@@ -1,3 +1,5 @@
+'use client'
+
 import { useTranslations } from 'next-intl'
 import { Instagram, Youtube, ExternalLink } from 'lucide-react'
 import SectionHeader from '@/components/shared/section-header'

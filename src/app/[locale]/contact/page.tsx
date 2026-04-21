@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import SectionHeader from '@/components/shared/section-header'
 import { MotionWrapper } from '@/components/shared/motion-wrapper'
 import { Button } from '@/components/ui/button'
@@ -26,13 +26,13 @@ function TikTokIcon({ className }: { className?: string }) {
 export default function ContactPage() {
   const t = useTranslations('contactPage')
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
-  const schema = z.object({
+  const schema = useMemo(() => z.object({
     name: z.string().min(2, t('form.validation.nameMin')),
     email: z.string().email(t('form.validation.emailInvalid')),
     phone: z.string().min(7, t('form.validation.phoneInvalid')),
     service: z.string().optional(),
     message: z.string().min(10, t('form.validation.messageMin')),
-  })
+  }), [t])
   type FormData = z.infer<typeof schema>
 
   const {

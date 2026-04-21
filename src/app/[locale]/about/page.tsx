@@ -1,8 +1,8 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
+import Image from 'next/image'
 import SectionHeader from '@/components/shared/section-header'
-import ImagePlaceholder from '@/components/shared/image-placeholder'
 import { MotionWrapper, StaggerContainer, staggerItem } from '@/components/shared/motion-wrapper'
 import { Palette, Monitor, Heart, Shield } from 'lucide-react'
 import { MAPS_EMBED_URL, GOOGLE_MAPS_URL } from '@/lib/utils'
@@ -49,11 +49,19 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <MotionWrapper direction="left">
-              <ImagePlaceholder
-                aspectRatio="3/4"
-                label="Dr. Arefeh Lotfi"
-                rounded="2xl"
-              />
+              <div className="relative">
+                <div className="absolute -inset-4 rounded-3xl bg-primary/5 -z-10" />
+                <div className="absolute -bottom-3 -end-3 w-full h-full rounded-2xl border-2 border-primary/20 -z-10" />
+                <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
+                  <Image
+                    src="/images/dr-lotfi-about.png"
+                    alt="Dr. Arefeh Lotfi – Cosmetic Dentist Dubai"
+                    fill
+                    className="object-cover object-top"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                </div>
+              </div>
             </MotionWrapper>
             <MotionWrapper direction="right" className="space-y-6">
               <h2 className="text-3xl font-bold text-foreground">{t('storyTitle')}</h2>
@@ -134,7 +142,7 @@ export default function AboutPage() {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Medicazone Dental Clinic location"
+                  title="Hoor Al Aliaa Dental Clinic location"
                 />
               </div>
             </MotionWrapper>

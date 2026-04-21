@@ -4,7 +4,7 @@ export default function JsonLd() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Dentist',
-    name: 'Dr. Arefeh Lotfi — Medicazone Dental Clinic',
+    name: 'Dr. Arefeh Lotfi — Hoor Al Aliaa Dental Clinic',
     description:
       'Dr. Arefeh Lotfi is a cosmetic and digital dentist in Dubai, specializing in Hollywood Smile, Porcelain Veneers, Teeth Whitening, Digital Dentistry, Smile Design, and Dental Implants.',
     url: 'https://drarefehlotfi.com',

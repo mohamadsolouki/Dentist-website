@@ -142,8 +142,8 @@
     "badge": "Meet Your Doctor",
     "title": "Dr. Arefeh Lotfi",
     "credentials": "Cosmetic & Digital Dentist | Dubai, UAE",
-    "bio": "Dr. Arefeh Lotfi is a Dubai-based cosmetic and digital dentist at Medicazone clinic, known for her artistic approach to smile design and passion for transforming lives through beautiful smiles. Beyond the clinic, she is a pianist, globetrotter, horse rider, and social media influencer — bringing the same creativity and precision to everything she does.",
-    "clinicName": "Medicazone Dental Clinic",
+    "bio": "Dr. Arefeh Lotfi is a Dubai-based cosmetic and digital dentist at Hoor Al Aliaa Dental Clinic, known for her artistic approach to smile design and passion for transforming lives through beautiful smiles. Beyond the clinic, she is a pianist, globetrotter, horse rider, and social media influencer — bringing the same creativity and precision to everything she does.",
+    "clinicName": "Hoor Al Aliaa Dental Clinic",
     "clinicAddress": "Villa 943, Al Wasl Road, Umm Suqeim, Dubai",
     "specialties": ["Hollywood Smile", "Porcelain Veneers", "Digital Dentistry", "Smile Design", "Teeth Whitening"],
     "bookWith": "Book with Dr. Lotfi"
@@ -217,7 +217,7 @@
     "heroTitle": "Where Art Meets Dentistry",
     "heroSubtitle": "A passion for beautiful smiles, backed by the latest digital technology and a genuine care for every patient.",
     "storyTitle": "The Story",
-    "storyText1": "Dr. Arefeh Lotfi is a cosmetic and digital dentist practicing at Medicazone clinic in Umm Suqeim, Dubai. With a philosophy that dentistry is both an art and a science, she brings a creative, detail-oriented approach to every smile she designs.",
+    "storyText1": "Dr. Arefeh Lotfi is a cosmetic and digital dentist practicing at Hoor Al Aliaa Dental Clinic in Umm Suqeim, Dubai. With a philosophy that dentistry is both an art and a science, she brings a creative, detail-oriented approach to every smile she designs.",
     "storyText2": "Known for her warm, multilingual consultations in English, Farsi, and Arabic, Dr. Lotfi has built a reputation as one of Dubai's most sought-after cosmetic dentists — treating patients who travel from across the UAE and internationally.",
     "storyText3": "Beyond the clinic, Dr. Lotfi is a pianist, world traveler, horse rider, and social media influencer — bringing the same creativity, precision, and passion to everything she does.",
     "valuesTitle": "Our Values",
@@ -228,7 +228,7 @@
       "accessibility": { "title": "Accessibility", "description": "All insurance accepted and flexible installments available so everyone can access quality dental care." }
     },
     "clinicTitle": "The Clinic",
-    "clinicName": "Medicazone",
+    "clinicName": "Hoor Al Aliaa Dental Clinic",
     "clinicAddress": "Villa 943, Al Wasl Road, Al Manar, Umm Suqeim, Dubai",
     "clinicHours": "Open Daily · Closes at 7:00 PM",
     "wheelchair": "Wheelchair Accessible"

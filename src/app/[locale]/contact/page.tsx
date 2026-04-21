@@ -160,7 +160,7 @@ export default function ContactPage() {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Medicazone Dental Clinic"
+                  title="Hoor Al Aliaa Dental Clinic"
                 />
               </div>
             </MotionWrapper>

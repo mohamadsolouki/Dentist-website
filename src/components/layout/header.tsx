@@ -35,7 +35,7 @@ export default function Header() {
           'fixed top-0 inset-x-0 z-40 transition-all duration-300',
           scrolled
             ? 'bg-white/90 backdrop-blur-md border-b border-border shadow-[var(--shadow-header)]'
-            : 'bg-transparent'
+            : 'bg-gradient-to-b from-black/40 to-transparent backdrop-blur-[2px]'
         )}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -52,8 +52,8 @@ export default function Header() {
                 AL
               </div>
               <div className="hidden sm:block">
-                <p className="text-sm font-bold text-foreground leading-tight">Dr. Arefeh Lotfi</p>
-                <p className="text-[10px] text-muted-foreground leading-tight tracking-wide">Cosmetic Dentist · Dubai</p>
+                <p className={cn('text-sm font-bold leading-tight', scrolled ? 'text-foreground' : 'text-white')}>Dr. Arefeh Lotfi</p>
+                <p className={cn('text-[10px] leading-tight tracking-wide', scrolled ? 'text-muted-foreground' : 'text-white/60')}>Cosmetic Dentist · Dubai</p>
               </div>
             </Link>
 
@@ -63,7 +63,12 @@ export default function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-primary rounded-lg hover:bg-primary/5 transition-all duration-150"
+                  className={cn(
+                    'px-3 py-2 text-sm font-medium rounded-lg transition-all duration-150',
+                    scrolled
+                      ? 'text-muted-foreground hover:text-primary hover:bg-primary/5'
+                      : 'text-white/85 hover:text-white hover:bg-white/10'
+                  )}
                 >
                   {link.label}
                 </Link>
@@ -89,7 +94,7 @@ export default function Header() {
               </Button>
               {/* Mobile menu button */}
               <button
-                className="lg:hidden p-2 rounded-lg text-foreground hover:bg-muted transition-colors"
+                className={cn('lg:hidden p-2 rounded-lg transition-colors', scrolled ? 'text-foreground hover:bg-muted' : 'text-white hover:bg-white/10')}
                 onClick={() => setMobileOpen(!mobileOpen)}
                 aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
                 aria-expanded={mobileOpen ? 'true' : 'false'}

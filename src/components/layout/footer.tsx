@@ -152,7 +152,17 @@ export default function Footer() {
           <p className="text-xs text-white/40">
             © {new Date().getFullYear()} Dr. Arefeh Lotfi. {t('rights')}
           </p>
-          <p className="text-xs text-white/40">{t('madeWith')}</p>
+          <p className="text-xs text-white/40">
+            Designed & developed by{' '}
+            <a
+              href="https://hitalabs.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/60 hover:text-white transition-colors underline underline-offset-2"
+            >
+              Hita Labs FZC
+            </a>
+          </p>
         </div>
       </div>
     </footer>

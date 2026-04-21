@@ -26,13 +26,13 @@ export async function generateMetadata({
 
   const titles = {
     en: 'Dr. Arefeh Lotfi | Cosmetic Dentist Dubai | Hollywood Smile & Digital Dentistry',
-    fa: 'دکتر اعرفه لطفی | دندانپزشک زیبایی دبی | لبخند هالیوودی و دندانپزشکی دیجیتال',
-    ar: 'د. عارفة لطفي | طبيبة أسنان تجميلية دبي | ابتسامة هوليود وطب الأسنان الرقمي',
+    fa: 'دکتر عارفه لطفی | دندانپزشک زیبایی دبی | لبخند هالیوودی و دندانپزشکی دیجیتال',
+    ar: 'د. عارفه لطفي | طبيبة أسنان تجميلية دبي | ابتسامة هوليود وطب الأسنان الرقمي',
   }
   const descriptions = {
-    en: 'Book your consultation with Dr. Arefeh Lotfi at Medicazone Dubai. Expert in Hollywood Smile, porcelain veneers, teeth whitening, and digital dentistry. All insurance accepted.',
-    fa: 'مشاوره با دکتر اعرفه لطفی در Medicazone دبی را رزرو کنید. متخصص در لبخند هالیوودی، روکش پرسلن، سفید کردن دندان و دندانپزشکی دیجیتال. تمام بیمه‌ها پذیرفته می‌شود.',
-    ar: 'احجز استشارتك مع د. عارفة لطفي في Medicazone دبي. خبيرة في الابتسامة الهوليودية وقشور البورسلين وتبييض الأسنان وطب الأسنان الرقمي. جميع التأمينات مقبولة.',
+    en: 'Book your consultation with Dr. Arefeh Lotfi at Hoor Al Aliaa Dental Clinic Dubai. Expert in Hollywood Smile, porcelain veneers, teeth whitening, and digital dentistry. All insurance accepted.',
+    fa: 'مشاوره با دکتر عارفه لطفی در Hoor Al Aliaa Dental Clinic دبی را رزرو کنید. متخصص در لبخند هالیوودی، روکش پرسلن، سفید کردن دندان و دندانپزشکی دیجیتال. تمام بیمه‌ها پذیرفته می‌شود.',
+    ar: 'احجز استشارتك مع د. عارفه لطفي في Hoor Al Aliaa Dental Clinic دبي. خبيرة في الابتسامة الهوليودية وقشور البورسلين وتبييض الأسنان وطب الأسنان الرقمي. جميع التأمينات مقبولة.',
   }
 
   const currentLocale = locale as 'en' | 'fa' | 'ar'
@@ -49,7 +49,7 @@ export async function generateMetadata({
       'teeth whitening dubai',
       'digital dentistry dubai',
       'Dr Arefeh Lotfi',
-      'Medicazone',
+      'Hoor Al Aliaa Dental Clinic',
       'smile design dubai',
       'dental implants dubai',
     ],

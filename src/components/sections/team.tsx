@@ -1,8 +1,8 @@
 import { useTranslations } from 'next-intl'
 import { GraduationCap, Award, Languages } from 'lucide-react'
+import Image from 'next/image'
 import SectionHeader from '@/components/shared/section-header'
 import { MotionWrapper } from '@/components/shared/motion-wrapper'
-import ImagePlaceholder from '@/components/shared/image-placeholder'
 
 export default function Team() {
   const t = useTranslations('team')
@@ -25,12 +25,21 @@ export default function Team() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Photo */}
           <MotionWrapper direction="left">
-            <ImagePlaceholder
-              aspectRatio="3/4"
-              label="Dr. Arefeh Lotfi"
-              rounded="2xl"
-              className="max-w-sm mx-auto lg:mx-0"
-            />
+            <div className="relative max-w-sm mx-auto lg:mx-0">
+              {/* Decorative background blob */}
+              <div className="absolute -inset-4 rounded-3xl bg-primary/5 -z-10" />
+              <div className="absolute -bottom-3 -end-3 w-full h-full rounded-2xl border-2 border-primary/20 -z-10" />
+
+              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
+                <Image
+                  src="/images/dr-lotfi-2.png"
+                  alt="Dr. Arefeh Lotfi – Cosmetic Dentist Dubai"
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 1024px) 100vw, 384px"
+                />
+              </div>
+            </div>
           </MotionWrapper>
 
           {/* Content */}

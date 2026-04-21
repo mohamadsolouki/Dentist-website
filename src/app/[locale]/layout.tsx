@@ -1,5 +1,5 @@
 import { NextIntlClientProvider, hasLocale } from 'next-intl'
-import { getMessages, getTranslations } from 'next-intl/server'
+import { getMessages, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { routing } from '@/i18n/routing'
 import { geist, vazirmatn } from '@/lib/fonts'
@@ -19,7 +19,10 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>
 }): Promise<Metadata> {
   const { locale } = await params
-  const t = await getTranslations({ locale, namespace: 'team' })
+
+  if (!hasLocale(routing.locales, locale)) {
+    notFound()
+  }
 
   const titles = {
     en: 'Dr. Arefeh Lotfi | Cosmetic Dentist Dubai | Hollywood Smile & Digital Dentistry',
@@ -57,20 +60,11 @@ export async function generateMetadata({
       siteName: 'Dr. Arefeh Lotfi | Cosmetic Dentist Dubai',
       title: titles[currentLocale] || titles.en,
       description: descriptions[currentLocale] || descriptions.en,
-      url: `https://drarefehlotfi.com/${locale}`,
     },
     twitter: {
       card: 'summary_large_image',
       title: titles[currentLocale] || titles.en,
       description: descriptions[currentLocale] || descriptions.en,
-    },
-    alternates: {
-      canonical: `https://drarefehlotfi.com/${locale}`,
-      languages: {
-        en: 'https://drarefehlotfi.com/en',
-        fa: 'https://drarefehlotfi.com/fa',
-        ar: 'https://drarefehlotfi.com/ar',
-      },
     },
     robots: {
       index: true,
@@ -86,6 +80,11 @@ export async function generateMetadata({
 }
 
 const rtlLocales = ['fa', 'ar']
+const langMap = {
+  en: 'en',
+  fa: 'fa',
+  ar: 'ar',
+} as const
 
 export default async function LocaleLayout({
   children,
@@ -100,15 +99,18 @@ export default async function LocaleLayout({
     notFound()
   }
 
+  setRequestLocale(locale)
+
   const messages = await getMessages()
   const dir = rtlLocales.includes(locale) ? 'rtl' : 'ltr'
+  const lang = langMap[locale]
   const fontClass = locale === 'en'
     ? geist.variable
     : `${vazirmatn.variable} font-[family-name:var(--font-vazirmatn)]`
 
   return (
     <NextIntlClientProvider messages={messages}>
-      <div lang={locale} dir={dir} className={fontClass}>
+      <div lang={lang} dir={dir} className={fontClass}>
         <JsonLd />
         <Header />
         <main>{children}</main>

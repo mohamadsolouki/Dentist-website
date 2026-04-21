@@ -2,11 +2,10 @@
 
 import { useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
-import { ArrowDown, Phone } from 'lucide-react'
+import { ArrowDown } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { getWhatsAppLink, CLINIC_PHONE_DISPLAY } from '@/lib/utils'
-import Link from 'next/link'
-import { useLocale } from 'next-intl'
+import { getWhatsAppLink } from '@/lib/utils'
+import { Link } from '@/i18n/navigation'
 
 const wordVariants = {
   hidden: { opacity: 0, y: 30, filter: 'blur(8px)' },
@@ -24,7 +23,6 @@ const wordVariants = {
 
 export default function Hero() {
   const t = useTranslations('hero')
-  const locale = useLocale()
 
   const headlineWords = [t('headline1'), t('headline2'), t('headline3')]
 
@@ -109,7 +107,7 @@ export default function Hero() {
               </a>
             </Button>
             <Button size="xl" variant="outline" className="border-white/30 text-white hover:bg-white/10 hover:border-white/50" asChild>
-              <Link href={`/${locale}/services`}>
+              <Link href="/services">
                 {t('cta2')}
               </Link>
             </Button>

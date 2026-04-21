@@ -1,7 +1,7 @@
-import Link from 'next/link'
-import { useTranslations, useLocale } from 'next-intl'
+import { useTranslations } from 'next-intl'
 import { Instagram, Youtube, Phone, MapPin, MessageCircle } from 'lucide-react'
-import { SOCIAL_LINKS, CLINIC_PHONE_DISPLAY, CLINIC_ADDRESS, WHATSAPP_DISPLAY, getWhatsAppLink } from '@/lib/utils'
+import { Link } from '@/i18n/navigation'
+import { SOCIAL_LINKS, CLINIC_PHONE_DISPLAY, getWhatsAppLink } from '@/lib/utils'
 
 // TikTok icon (not in Lucide)
 function TikTokIcon({ className }: { className?: string }) {
@@ -15,15 +15,14 @@ function TikTokIcon({ className }: { className?: string }) {
 export default function Footer() {
   const t = useTranslations('footer')
   const tNav = useTranslations('nav')
-  const locale = useLocale()
 
   const navLinks = [
-    { href: `/${locale}`, label: tNav('home') },
-    { href: `/${locale}/services`, label: tNav('services') },
-    { href: `/${locale}/about`, label: tNav('about') },
-    { href: `/${locale}/gallery`, label: tNav('gallery') },
-    { href: `/${locale}/contact`, label: tNav('contact') },
-  ]
+    { href: '/', label: tNav('home') },
+    { href: '/services', label: tNav('services') },
+    { href: '/about', label: tNav('about') },
+    { href: '/gallery', label: tNav('gallery') },
+    { href: '/contact', label: tNav('contact') },
+  ] as const
 
   const socialLinks = [
     { href: SOCIAL_LINKS.instagram, icon: Instagram, label: 'Instagram' },
@@ -38,7 +37,7 @@ export default function Footer() {
 
           {/* Brand */}
           <div className="lg:col-span-1 space-y-4">
-            <Link href={`/${locale}`} className="inline-flex items-center gap-2 group">
+            <Link href="/" className="inline-flex items-center gap-2 group">
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-white text-sm font-bold">
                 AL
               </div>

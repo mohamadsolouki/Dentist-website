@@ -1,18 +1,17 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import Link from 'next/link'
-import { useTranslations, useLocale } from 'next-intl'
+import { useState } from 'react'
+import { useTranslations } from 'next-intl'
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { Link } from '@/i18n/navigation'
 import LocaleSwitcher from '@/components/shared/locale-switcher'
 import { Button } from '@/components/ui/button'
 import { getWhatsAppLink } from '@/lib/utils'
 
 export default function Header() {
   const t = useTranslations('nav')
-  const locale = useLocale()
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const { scrollY } = useScroll()
@@ -22,12 +21,12 @@ export default function Header() {
   })
 
   const navLinks = [
-    { href: `/${locale}`, label: t('home') },
-    { href: `/${locale}/services`, label: t('services') },
-    { href: `/${locale}/about`, label: t('about') },
-    { href: `/${locale}/gallery`, label: t('gallery') },
-    { href: `/${locale}/contact`, label: t('contact') },
-  ]
+    { href: '/', label: t('home') },
+    { href: '/services', label: t('services') },
+    { href: '/about', label: t('about') },
+    { href: '/gallery', label: t('gallery') },
+    { href: '/contact', label: t('contact') },
+  ] as const
 
   return (
     <>
@@ -46,7 +45,7 @@ export default function Header() {
           <div className="flex h-16 lg:h-20 items-center justify-between gap-4">
             {/* Logo */}
             <Link
-              href={`/${locale}`}
+              href="/"
               className="flex items-center gap-2 flex-shrink-0 group"
             >
               <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-white text-sm font-bold shadow-sm group-hover:shadow-md transition-shadow">
@@ -93,7 +92,7 @@ export default function Header() {
                 className="lg:hidden p-2 rounded-lg text-foreground hover:bg-muted transition-colors"
                 onClick={() => setMobileOpen(!mobileOpen)}
                 aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
-                aria-expanded={mobileOpen}
+                aria-expanded={mobileOpen ? 'true' : 'false'}
               >
                 {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
               </button>

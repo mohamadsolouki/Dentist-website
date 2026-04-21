@@ -1,13 +1,11 @@
-import { useTranslations, useLocale } from 'next-intl'
-import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 import { MessageCircle, Phone } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { getWhatsAppLink, CLINIC_PHONE_DISPLAY, SOCIAL_LINKS } from '@/lib/utils'
+import { getWhatsAppLink, CLINIC_PHONE_DISPLAY } from '@/lib/utils'
 import { MotionWrapper } from '@/components/shared/motion-wrapper'
 
 export default function CtaBanner() {
   const t = useTranslations('cta')
-  const locale = useLocale()
 
   return (
     <section className="section-padding relative overflow-hidden">

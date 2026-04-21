@@ -1,11 +1,11 @@
 'use client'
 
-import { useTranslations, useLocale } from 'next-intl'
-import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 import { ArrowRight, Sparkles, Star, Zap, Monitor, Smile, Anchor } from 'lucide-react'
 import SectionHeader from '@/components/shared/section-header'
 import { MotionWrapper, StaggerContainer, staggerItem } from '@/components/shared/motion-wrapper'
 import { Button } from '@/components/ui/button'
+import { Link } from '@/i18n/navigation'
 import { cn } from '@/lib/utils'
 import { motion } from 'framer-motion'
 
@@ -21,7 +21,6 @@ const serviceColors = [
 
 export default function ServicesPreview() {
   const t = useTranslations('services')
-  const locale = useLocale()
 
   const services = [
     t('items.hollywoodSmile.title'),
@@ -73,7 +72,7 @@ export default function ServicesPreview() {
                   {descs[i]}
                 </p>
                 <div className="mt-4 flex items-center gap-1 text-primary text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-                  <Link href={`/${locale}/services`} className="hover:underline">
+                  <Link href="/services" className="hover:underline">
                     {t('learnMore')}
                   </Link>
                   <ArrowRight className="h-3.5 w-3.5" />
@@ -85,7 +84,7 @@ export default function ServicesPreview() {
 
         <MotionWrapper delay={0.2} className="text-center mt-10">
           <Button size="lg" variant="outline" asChild>
-            <Link href={`/${locale}/services`}>
+            <Link href="/services">
               {t('viewAll')}
               <ArrowRight className="ms-2 h-4 w-4" />
             </Link>

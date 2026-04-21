@@ -1,15 +1,16 @@
 'use client'
 
 import { useLocale } from 'next-intl'
-import { useRouter, usePathname } from 'next/navigation'
 import { useTransition } from 'react'
+import { usePathname, useRouter } from '@/i18n/navigation'
+import type { Locale } from '@/i18n/routing'
 import { cn } from '@/lib/utils'
 
 const locales = [
   { code: 'en', label: 'EN', full: 'English' },
   { code: 'fa', label: 'FA', full: 'فارسی' },
   { code: 'ar', label: 'AR', full: 'العربية' },
-]
+] satisfies Array<{ code: Locale; label: string; full: string }>
 
 export default function LocaleSwitcher({ className }: { className?: string }) {
   const locale = useLocale()
@@ -17,13 +18,9 @@ export default function LocaleSwitcher({ className }: { className?: string }) {
   const pathname = usePathname()
   const [isPending, startTransition] = useTransition()
 
-  function switchLocale(nextLocale: string) {
-    // Replace /currentLocale/ prefix with /nextLocale/
-    const segments = pathname.split('/')
-    segments[1] = nextLocale
-    const newPath = segments.join('/')
+  function switchLocale(nextLocale: Locale) {
     startTransition(() => {
-      router.push(newPath)
+      router.replace(pathname, { locale: nextLocale })
     })
   }
 

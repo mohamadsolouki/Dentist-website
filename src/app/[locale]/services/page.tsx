@@ -87,7 +87,7 @@ export default function ServicesPage() {
                       asChild
                     >
                       <a
-                        href={getWhatsAppLink(`Hello, I'm interested in ${t(`items.${key}.title`)}.`)}
+                        href={getWhatsAppLink(t('whatsappInterest', { service: t(`items.${key}.title`) }))}
                         target="_blank"
                         rel="noopener noreferrer"
                       >

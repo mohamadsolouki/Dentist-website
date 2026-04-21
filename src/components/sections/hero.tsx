@@ -85,8 +85,8 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.75 }}
             >
               {[
-                { icon: Shield, text: 'All Insurance Accepted' },
-                { icon: Award, text: '10+ Years Experience' },
+                { icon: Shield, text: t('trustInsurance') },
+                { icon: Award, text: t('trustExperience') },
               ].map(({ icon: Icon, text }) => (
                 <span key={text} className="inline-flex items-center gap-1.5 text-xs text-white/60 bg-white/5 border border-white/10 rounded-full px-3 py-1.5">
                   <Icon className="h-3 w-3 text-teal-400" />
@@ -104,7 +104,7 @@ export default function Hero() {
             >
               <Button size="xl" variant="whatsapp" className="w-full sm:w-auto" asChild>
                 <a
-                  href={getWhatsAppLink('Hello Dr. Lotfi, I would like to book a consultation.')}
+                  href={getWhatsAppLink(t('whatsappMessage'))}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -126,9 +126,9 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 1.0 }}
             >
               {[
-                { value: '2000+', label: 'Happy Patients' },
-                { value: '5★', label: 'Google Rating' },
-                { value: '3', label: 'Languages' },
+                { value: '2000+', label: t('statPatients') },
+                { value: '5★', label: t('statRating') },
+                { value: '3', label: t('statLanguages') },
               ].map(({ value, label }) => (
                 <div key={label} className="flex flex-col">
                   <span className="text-2xl font-bold gold-text">{value}</span>
@@ -162,8 +162,8 @@ export default function Hero() {
                   ))}
                 </div>
                 <div>
-                  <p className="text-xs font-bold text-slate-900 leading-none">5.0 Rating</p>
-                  <p className="text-[10px] text-slate-500 mt-0.5">Google Reviews</p>
+                  <p className="text-xs font-bold text-slate-900 leading-none">{t('ratingCardTitle')}</p>
+                  <p className="text-[10px] text-slate-500 mt-0.5">{t('ratingCardSubtitle')}</p>
                 </div>
               </motion.div>
 
@@ -175,14 +175,14 @@ export default function Hero() {
                 transition={{ delay: 1.15, duration: 0.5 }}
               >
                 <p className="text-2xl font-bold leading-none">10+</p>
-                <p className="text-[11px] text-white/80 mt-1">Years of Excellence</p>
+                <p className="text-[11px] text-white/80 mt-1">{t('experienceCardLabel')}</p>
               </motion.div>
 
               {/* Doctor photo */}
               <div className="relative w-[300px] sm:w-[360px] lg:w-[420px] aspect-[3/4] rounded-[2.5rem] overflow-hidden border-2 border-white/10 shadow-[0_32px_80px_rgba(0,0,0,0.5)]">
                 <Image
                   src="/images/dr-lotfi.png"
-                  alt="Dr. Arefeh Lotfi – Cosmetic Dentist Dubai"
+                  alt={t('doctorImageAlt')}
                   fill
                   className="object-cover object-top"
                   priority
@@ -192,8 +192,8 @@ export default function Hero() {
                 <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-slate-950/60 to-transparent" />
                 {/* Name tag */}
                 <div className="absolute bottom-5 inset-x-5 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl px-4 py-3">
-                  <p className="text-white font-semibold text-sm">Dr. Arefeh Lotfi</p>
-                  <p className="text-white/60 text-xs mt-0.5">Cosmetic & Digital Dentist · Dubai</p>
+                  <p className="text-white font-semibold text-sm">{t('doctorName')}</p>
+                  <p className="text-white/60 text-xs mt-0.5">{t('doctorRole')}</p>
                 </div>
               </div>
             </div>

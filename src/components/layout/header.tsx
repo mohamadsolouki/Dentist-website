@@ -12,6 +12,7 @@ import { getWhatsAppLink } from '@/lib/utils'
 
 export default function Header() {
   const t = useTranslations('nav')
+  const tCommon = useTranslations('common')
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const { scrollY } = useScroll()
@@ -81,11 +82,25 @@ export default function Header() {
               <Button
                 size="sm"
                 variant="default"
+                className="inline-flex lg:hidden"
+                asChild
+              >
+                <a
+                  href={getWhatsAppLink(t('bookAppointmentMessage'))}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {t('bookAppointment')}
+                </a>
+              </Button>
+              <Button
+                size="sm"
+                variant="default"
                 className="hidden lg:inline-flex"
                 asChild
               >
                 <a
-                  href={getWhatsAppLink('Hello, I would like to book a consultation.')}
+                  href={getWhatsAppLink(t('bookAppointmentMessage'))}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -96,7 +111,7 @@ export default function Header() {
               <button
                 className={cn('lg:hidden p-2 rounded-lg transition-colors', scrolled ? 'text-foreground hover:bg-muted' : 'text-white hover:bg-white/10')}
                 onClick={() => setMobileOpen(!mobileOpen)}
-                aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+                aria-label={mobileOpen ? tCommon('close') : tCommon('open')}
                 aria-expanded={mobileOpen ? 'true' : 'false'}
               >
                 {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -128,14 +143,17 @@ export default function Header() {
           aria-label="Mobile navigation"
         >
           <div className="flex items-center justify-between p-6 border-b border-border">
-            <span className="font-semibold text-foreground">Menu</span>
+            <span className="font-semibold text-foreground">{tCommon('menu')}</span>
             <button
               className="p-1.5 rounded-lg hover:bg-muted transition-colors"
               onClick={() => setMobileOpen(false)}
-              aria-label="Close menu"
+              aria-label={tCommon('close')}
             >
               <X className="h-5 w-5" />
             </button>
+          </div>
+          <div className="p-4 border-b border-border">
+            <LocaleSwitcher className="w-full justify-center" />
           </div>
           <div className="flex-1 overflow-y-auto py-4 px-3">
             {navLinks.map((link) => (
@@ -148,18 +166,6 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
-          </div>
-          <div className="p-4 border-t border-border space-y-3">
-            <LocaleSwitcher className="w-full justify-center" />
-            <Button variant="whatsapp" size="lg" className="w-full" asChild>
-              <a
-                href={getWhatsAppLink()}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {t('bookAppointment')}
-              </a>
-            </Button>
           </div>
         </motion.nav>
       </motion.div>

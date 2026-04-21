@@ -46,6 +46,7 @@ const platformData = [
 ]
 
 function InstagramShowcase() {
+  const t = useTranslations('social')
   const [posts, setPosts] = useState<InstagramPost[]>([])
   const [scriptLoaded, setScriptLoaded] = useState(false)
 
@@ -81,7 +82,7 @@ function InstagramShowcase() {
         </div>
         <div>
           <p className="font-semibold text-sm text-foreground">@drarefehlotfi</p>
-          <p className="text-xs text-muted-foreground">Hoor Al Aliaa Dental Clinic · Dubai</p>
+          <p className="text-xs text-muted-foreground">{t('profileClinic')}</p>
         </div>
         <a
           href={SOCIAL_LINKS.instagram}
@@ -90,7 +91,7 @@ function InstagramShowcase() {
           className="ms-auto inline-flex items-center gap-1 text-xs text-primary hover:underline font-medium shrink-0"
         >
           <ExternalLink className="h-3 w-3" />
-          Follow
+          {t('follow')}
         </a>
       </div>
 
@@ -123,7 +124,7 @@ function InstagramShowcase() {
         className="mt-4 w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-gradient-to-r from-pink-500 via-rose-500 to-orange-400 text-white text-sm font-semibold hover:opacity-90 transition-opacity duration-200"
       >
         <Instagram className="h-4 w-4" />
-        Follow on Instagram
+        {t('followInstagram')}
       </a>
     </>
   )
@@ -143,7 +144,7 @@ export default function SocialFeed() {
         />
 
         <div className="grid lg:grid-cols-3 gap-6">
-          {/* Instagram embeds — spans 2 cols */}
+          {/* Instagram embeds - spans 2 cols */}
           <MotionWrapper className="lg:col-span-2 rounded-2xl border border-border bg-card p-5 shadow-[var(--shadow-card)] overflow-hidden">
             <InstagramShowcase />
           </MotionWrapper>

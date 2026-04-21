@@ -15,16 +15,6 @@ import { MapPin, Phone, MessageCircle, Clock, Instagram, Youtube, CheckCircle, A
 import { CLINIC_PHONE_DISPLAY, WHATSAPP_DISPLAY, GOOGLE_MAPS_URL, MAPS_EMBED_URL, SOCIAL_LINKS, getWhatsAppLink } from '@/lib/utils'
 import { cn } from '@/lib/utils'
 
-const schema = z.object({
-  name: z.string().min(2, 'Name must be at least 2 characters'),
-  email: z.string().email('Please enter a valid email'),
-  phone: z.string().min(7, 'Please enter a valid phone number'),
-  service: z.string().optional(),
-  message: z.string().min(10, 'Message must be at least 10 characters'),
-})
-
-type FormData = z.infer<typeof schema>
-
 function TikTokIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -36,6 +26,14 @@ function TikTokIcon({ className }: { className?: string }) {
 export default function ContactPage() {
   const t = useTranslations('contactPage')
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+  const schema = z.object({
+    name: z.string().min(2, t('form.validation.nameMin')),
+    email: z.string().email(t('form.validation.emailInvalid')),
+    phone: z.string().min(7, t('form.validation.phoneInvalid')),
+    service: z.string().optional(),
+    message: z.string().min(10, t('form.validation.messageMin')),
+  })
+  type FormData = z.infer<typeof schema>
 
   const {
     register,
@@ -47,7 +45,7 @@ export default function ContactPage() {
   async function onSubmit(data: FormData) {
     setStatus('loading')
     // Build a WhatsApp message with form data as fallback (no backend yet)
-    const msg = `New inquiry from ${data.name}%0AEmail: ${data.email}%0APhone: ${data.phone}%0AService: ${data.service || 'General'}%0AMessage: ${data.message}`
+    const msg = `${t('form.whatsapp.newInquiry')} ${data.name}%0A${t('form.whatsapp.email')}: ${data.email}%0A${t('form.whatsapp.phone')}: ${data.phone}%0A${t('form.whatsapp.service')}: ${data.service || t('form.whatsapp.general')}%0A${t('form.whatsapp.message')}: ${data.message}`
     window.open(`https://wa.me/971557725086?text=${msg}`, '_blank')
     setStatus('success')
     reset()
@@ -79,7 +77,7 @@ export default function ContactPage() {
                   {
                     icon: MapPin,
                     label: t('info.address'),
-                    value: 'Hoor Al Aliaa Polyclinic, Al Wasl Road, Al Manar, Umm Suqeim, Dubai',
+                    value: t('info.addressValue'),
                     href: GOOGLE_MAPS_URL,
                     hrefLabel: t('info.getDirections'),
                   },
@@ -121,7 +119,7 @@ export default function ContactPage() {
 
               {/* WhatsApp CTA */}
               <Button variant="whatsapp" size="lg" className="w-full" asChild>
-                <a href={getWhatsAppLink('Hello, I would like to book a consultation.')} target="_blank" rel="noopener noreferrer">
+                <a href={getWhatsAppLink(t('info.chatWhatsAppMessage'))} target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="me-2 h-5 w-5" />
                   {t('info.chatWhatsApp')}
                 </a>
@@ -160,7 +158,7 @@ export default function ContactPage() {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Hoor Al Aliaa Dental Clinic"
+                  title={t('info.mapTitle')}
                 />
               </div>
             </MotionWrapper>
@@ -219,7 +217,15 @@ export default function ContactPage() {
                         className="flex h-10 w-full rounded-xl border border-input bg-background px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring transition-colors text-foreground"
                       >
                         <option value="">{t('form.servicePlaceholder')}</option>
-                        {['Hollywood Smile', 'Porcelain Veneers', 'Teeth Whitening', 'Digital Dentistry', 'Smile Design', 'Dental Implants', 'General Consultation'].map((s) => (
+                        {[
+                          t('form.services.hollywoodSmile'),
+                          t('form.services.porcelainVeneers'),
+                          t('form.services.teethWhitening'),
+                          t('form.services.digitalDentistry'),
+                          t('form.services.smileDesign'),
+                          t('form.services.dentalImplants'),
+                          t('form.services.generalConsultation'),
+                        ].map((s) => (
                           <option key={s} value={s}>{s}</option>
                         ))}
                       </select>

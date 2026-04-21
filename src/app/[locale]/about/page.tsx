@@ -55,7 +55,7 @@ export default function AboutPage() {
                 <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
                   <Image
                     src="/images/dr-lotfi-about.png"
-                    alt="Dr. Arefeh Lotfi – Cosmetic Dentist Dubai"
+                    alt={t('imageAlt')}
                     fill
                     className="object-cover object-top"
                     sizes="(max-width: 1024px) 100vw, 50vw"
@@ -126,7 +126,7 @@ export default function AboutPage() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 mt-2 text-sm text-primary font-medium hover:underline"
                 >
-                  Get Directions →
+                  {t('getDirections')} →
                 </a>
               </div>
             </MotionWrapper>
@@ -142,7 +142,7 @@ export default function AboutPage() {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Hoor Al Aliaa Dental Clinic location"
+                  title={t('mapTitle')}
                 />
               </div>
             </MotionWrapper>

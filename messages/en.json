@@ -5,17 +5,30 @@
     "about": "About",
     "gallery": "Gallery",
     "contact": "Contact",
-    "bookAppointment": "Book Appointment"
+    "bookAppointment": "Book Appointment",
+    "bookAppointmentMessage": "Hello, I would like to book a consultation."
   },
   "hero": {
     "badge": "⭐ 5-Star Rated Dentist in Dubai",
     "headline1": "Your Perfect",
     "headline2": "Smile Starts",
     "headline3": "Here.",
-    "subheadline": "Cosmetic & digital dentistry with a personal touch — from Hollywood Smiles to advanced implants, crafted for you in the heart of Dubai.",
+    "subheadline": "Cosmetic & digital dentistry with a personal touch - from Hollywood Smiles to advanced implants, crafted for you in the heart of Dubai.",
     "cta1": "Book Appointment",
     "cta2": "Explore Services",
-    "scrollHint": "Scroll to explore"
+    "scrollHint": "Scroll to explore",
+    "trustInsurance": "All Insurance Accepted",
+    "trustExperience": "10+ Years Experience",
+    "statPatients": "Happy Patients",
+    "statRating": "Google Rating",
+    "statLanguages": "Languages",
+    "ratingCardTitle": "5.0 Rating",
+    "ratingCardSubtitle": "Google Reviews",
+    "experienceCardLabel": "Years of Excellence",
+    "doctorImageAlt": "Dr. Arefeh Lotfi, Cosmetic Dentist in Dubai",
+    "doctorName": "Dr. Arefeh Lotfi",
+    "doctorRole": "Cosmetic & Digital Dentist · Dubai",
+    "whatsappMessage": "Hello Dr. Lotfi, I would like to book a consultation."
   },
   "stats": {
     "patients": "Happy Patients",
@@ -30,7 +43,7 @@
   "services": {
     "badge": "What We Offer",
     "title": "World-Class Dental Services",
-    "subtitle": "From Hollywood Smiles to advanced digital dentistry — every treatment is tailored to give you lasting results and a confident smile.",
+    "subtitle": "From Hollywood Smiles to advanced digital dentistry - every treatment is tailored to give you lasting results and a confident smile.",
     "items": {
       "hollywoodSmile": {
         "title": "Hollywood Smile",
@@ -38,11 +51,11 @@
       },
       "veneers": {
         "title": "Porcelain Veneers",
-        "description": "Ultra-thin, custom-crafted porcelain shells that transform shape, color, and size — minimally invasive perfection."
+        "description": "Ultra-thin, custom-crafted porcelain shells that transform shape, color, and size - minimally invasive perfection."
       },
       "whitening": {
         "title": "Teeth Whitening",
-        "description": "Professional whitening with the Beyond Brand device from the USA — up to 8 shades lighter in a single session."
+        "description": "Professional whitening with the Beyond Brand device from the USA - up to 8 shades lighter in a single session."
       },
       "digital": {
         "title": "Digital Dentistry",
@@ -50,11 +63,11 @@
       },
       "smileDesign": {
         "title": "Smile Design",
-        "description": "Art meets science — a comprehensive digital simulation of your new smile before any treatment begins."
+        "description": "Art meets science - a comprehensive digital simulation of your new smile before any treatment begins."
       },
       "implants": {
         "title": "Dental Implants",
-        "description": "Permanent, natural-looking tooth replacements anchored to your jaw — restoring function and confidence."
+        "description": "Permanent, natural-looking tooth replacements anchored to your jaw - restoring function and confidence."
       }
     },
     "learnMore": "Learn More",
@@ -63,7 +76,7 @@
   "why": {
     "badge": "Why Choose Dr. Lotfi",
     "title": "Dentistry as an Art & Science",
-    "subtitle": "A unique blend of technical excellence, artistic vision, and genuine care — setting new standards for dental experiences in Dubai.",
+    "subtitle": "A unique blend of technical excellence, artistic vision, and genuine care - setting new standards for dental experiences in Dubai.",
     "items": {
       "insurance": {
         "title": "All Insurance Accepted",
@@ -71,7 +84,7 @@
       },
       "installment": {
         "title": "Flexible Installments",
-        "description": "Budget-friendly payment plans available — your perfect smile shouldn't have to wait."
+        "description": "Budget-friendly payment plans available - your perfect smile shouldn't have to wait."
       },
       "digital": {
         "title": "Digital Precision",
@@ -79,7 +92,7 @@
       },
       "multilingual": {
         "title": "Multilingual Care",
-        "description": "Consultations in English, Farsi, and Arabic — so you always feel heard and understood."
+        "description": "Consultations in English, Farsi, and Arabic - so you always feel heard and understood."
       }
     }
   },
@@ -94,14 +107,17 @@
   "social": {
     "badge": "Follow the Journey",
     "title": "Dr. Lotfi on Social Media",
-    "subtitle": "Behind the scenes of dentistry, travel, music, and life in Dubai — follow along on Instagram, TikTok, and YouTube.",
+    "subtitle": "Behind the scenes of dentistry, travel, music, and life in Dubai - follow along on Instagram, TikTok, and YouTube.",
     "instagram": "Instagram",
     "tiktok": "TikTok",
     "youtube": "YouTube",
     "followOn": "Follow on",
     "viewProfile": "View Profile",
     "latestPosts": "Latest Posts",
-    "noToken": "Follow @drarefehlotfi on Instagram for the latest posts and smile transformations."
+    "noToken": "Follow @drarefehlotfi on Instagram for the latest posts and smile transformations.",
+    "profileClinic": "Hoor Al Aliaa Dental Clinic · Dubai",
+    "follow": "Follow",
+    "followInstagram": "Follow on Instagram"
   },
   "testimonials": {
     "badge": "Patient Stories",
@@ -118,7 +134,7 @@
       {
         "name": "Mohammed Al-Rashid",
         "location": "Abu Dhabi, UAE",
-        "text": "Flew in from Abu Dhabi specifically for Dr. Lotfi. The digital dentistry approach is impressive — she showed me the final result digitally before we even started. Professional and caring.",
+        "text": "Flew in from Abu Dhabi specifically for Dr. Lotfi. The digital dentistry approach is impressive - she showed me the final result digitally before we even started. Professional and caring.",
         "service": "Dental Implants",
         "rating": 5
       },
@@ -142,11 +158,19 @@
     "badge": "Meet Your Doctor",
     "title": "Dr. Arefeh Lotfi",
     "credentials": "Cosmetic & Digital Dentist | Dubai, UAE",
-    "bio": "Dr. Arefeh Lotfi is a Dubai-based cosmetic and digital dentist at Hoor Al Aliaa Dental Clinic, known for her artistic approach to smile design and passion for transforming lives through beautiful smiles. Beyond the clinic, she is a pianist, globetrotter, horse rider, and social media influencer — bringing the same creativity and precision to everything she does.",
+    "bio": "Dr. Arefeh Lotfi is a Dubai-based cosmetic and digital dentist at Hoor Al Aliaa Dental Clinic, known for her artistic approach to smile design and passion for transforming lives through beautiful smiles. Beyond the clinic, she is a pianist, globetrotter, horse rider, and social media influencer - bringing the same creativity and precision to everything she does.",
     "clinicName": "Hoor Al Aliaa Dental Clinic",
     "clinicAddress": "Hoor Al Aliaa Polyclinic, Al Wasl Road, Umm Suqeim, Dubai",
-    "specialties": ["Hollywood Smile", "Porcelain Veneers", "Digital Dentistry", "Smile Design", "Teeth Whitening"],
-    "bookWith": "Book with Dr. Lotfi"
+    "specialties": [
+      "Hollywood Smile",
+      "Porcelain Veneers",
+      "Digital Dentistry",
+      "Smile Design",
+      "Teeth Whitening"
+    ],
+    "bookWith": "Book with Dr. Lotfi",
+    "languages": "English · فارسی · العربية",
+    "imageAlt": "Dr. Arefeh Lotfi, Cosmetic Dentist in Dubai"
   },
   "cta": {
     "badge": "Ready for Your Transformation?",
@@ -165,15 +189,18 @@
     "phone": "+971 55 772 5086",
     "whatsapp": "+971 55 772 5086",
     "rights": "All rights reserved.",
-    "madeWith": "Crafted with care in Dubai"
+    "madeWith": "Crafted with care in Dubai",
+    "whatsappCta": "WhatsApp Us",
+    "designedBy": "Designed & developed by",
+    "whatsappMessage": "Hello, I would like to book a consultation."
   },
   "servicesPage": {
     "badge": "Our Services",
     "title": "Complete Dental Care",
-    "subtitle": "From a routine cleaning to a full smile makeover — every service is delivered with precision, care, and artistry.",
+    "subtitle": "From a routine cleaning to a full smile makeover - every service is delivered with precision, care, and artistry.",
     "insurance": {
       "title": "Insurance & Payment",
-      "description": "We accept all major medical insurance plans. Flexible installment payment options are also available — making your perfect smile truly accessible.",
+      "description": "We accept all major medical insurance plans. Flexible installment payment options are also available - making your perfect smile truly accessible.",
       "badge": "All Insurance Accepted"
     },
     "items": {
@@ -187,7 +214,7 @@
       },
       "whitening": {
         "title": "Teeth Whitening",
-        "description": "Professional whitening using the Beyond Brand device from the USA — the gold standard for safe, effective, and lasting teeth whitening."
+        "description": "Professional whitening using the Beyond Brand device from the USA - the gold standard for safe, effective, and lasting teeth whitening."
       },
       "digital": {
         "title": "Digital Dentistry",
@@ -195,7 +222,7 @@
       },
       "smileDesign": {
         "title": "Smile Design",
-        "description": "A detailed digital preview of your new smile before any treatment. You approve the final look — no surprises."
+        "description": "A detailed digital preview of your new smile before any treatment. You approve the final look - no surprises."
       },
       "implants": {
         "title": "Dental Implants",
@@ -207,10 +234,11 @@
       },
       "emergency": {
         "title": "Emergency Dental Care",
-        "description": "Same-day appointments for dental emergencies — toothache, chipped teeth, lost crowns, and more. We're here when you need us most."
+        "description": "Same-day appointments for dental emergencies - toothache, chipped teeth, lost crowns, and more. We're here when you need us most."
       }
     },
-    "bookService": "Book This Service"
+    "bookService": "Book This Service",
+    "whatsappInterest": "Hello, I'm interested in {service}."
   },
   "aboutPage": {
     "badge": "About Dr. Lotfi",
@@ -218,25 +246,40 @@
     "heroSubtitle": "A passion for beautiful smiles, backed by the latest digital technology and a genuine care for every patient.",
     "storyTitle": "The Story",
     "storyText1": "Dr. Arefeh Lotfi is a cosmetic and digital dentist practicing at Hoor Al Aliaa Dental Clinic in Umm Suqeim, Dubai. With a philosophy that dentistry is both an art and a science, she brings a creative, detail-oriented approach to every smile she designs.",
-    "storyText2": "Known for her warm, multilingual consultations in English, Farsi, and Arabic, Dr. Lotfi has built a reputation as one of Dubai's most sought-after cosmetic dentists — treating patients who travel from across the UAE and internationally.",
-    "storyText3": "Beyond the clinic, Dr. Lotfi is a pianist, world traveler, horse rider, and social media influencer — bringing the same creativity, precision, and passion to everything she does.",
+    "storyText2": "Known for her warm, multilingual consultations in English, Farsi, and Arabic, Dr. Lotfi has built a reputation as one of Dubai's most sought-after cosmetic dentists - treating patients who travel from across the UAE and internationally.",
+    "storyText3": "Beyond the clinic, Dr. Lotfi is a pianist, world traveler, horse rider, and social media influencer - bringing the same creativity, precision, and passion to everything she does.",
     "valuesTitle": "Our Values",
     "values": {
-      "artistry": { "title": "Artistry", "description": "Every smile is a unique canvas. We combine aesthetics with science for results that look completely natural." },
-      "technology": { "title": "Technology", "description": "Digital Smile Design and CAD/CAM technology mean we plan perfectly before we treat." },
-      "care": { "title": "Genuine Care", "description": "We listen first. Your goals, your concerns, your comfort — always the priority." },
-      "accessibility": { "title": "Accessibility", "description": "All insurance accepted and flexible installments available so everyone can access quality dental care." }
+      "artistry": {
+        "title": "Artistry",
+        "description": "Every smile is a unique canvas. We combine aesthetics with science for results that look completely natural."
+      },
+      "technology": {
+        "title": "Technology",
+        "description": "Digital Smile Design and CAD/CAM technology mean we plan perfectly before we treat."
+      },
+      "care": {
+        "title": "Genuine Care",
+        "description": "We listen first. Your goals, your concerns, your comfort - always the priority."
+      },
+      "accessibility": {
+        "title": "Accessibility",
+        "description": "All insurance accepted and flexible installments available so everyone can access quality dental care."
+      }
     },
     "clinicTitle": "The Clinic",
     "clinicName": "Hoor Al Aliaa Dental Clinic",
     "clinicAddress": "Hoor Al Aliaa Polyclinic, Al Wasl Road, Al Manar, Umm Suqeim, Dubai",
     "clinicHours": "Open Daily · Closes at 7:00 PM",
-    "wheelchair": "Wheelchair Accessible"
+    "wheelchair": "Wheelchair Accessible",
+    "getDirections": "Get Directions",
+    "mapTitle": "Hoor Al Aliaa Dental Clinic location",
+    "imageAlt": "Dr. Arefeh Lotfi, Cosmetic Dentist in Dubai"
   },
   "galleryPage": {
     "badge": "Gallery",
     "title": "Smile Transformations",
-    "subtitle": "A showcase of real results — before and after, smile designs, and clinic highlights.",
+    "subtitle": "A showcase of real results - before and after, smile designs, and clinic highlights.",
     "filters": {
       "all": "All",
       "hollywoodSmile": "Hollywood Smile",
@@ -264,7 +307,30 @@
       "submit": "Send Message",
       "sending": "Sending...",
       "success": "Message sent! We'll be in touch shortly.",
-      "error": "Something went wrong. Please try WhatsApp or call us directly."
+      "error": "Something went wrong. Please try WhatsApp or call us directly.",
+      "validation": {
+        "nameMin": "Name must be at least 2 characters",
+        "emailInvalid": "Please enter a valid email",
+        "phoneInvalid": "Please enter a valid phone number",
+        "messageMin": "Message must be at least 10 characters"
+      },
+      "whatsapp": {
+        "newInquiry": "New inquiry from",
+        "email": "Email",
+        "phone": "Phone",
+        "service": "Service",
+        "general": "General",
+        "message": "Message"
+      },
+      "services": {
+        "hollywoodSmile": "Hollywood Smile",
+        "porcelainVeneers": "Porcelain Veneers",
+        "teethWhitening": "Teeth Whitening",
+        "digitalDentistry": "Digital Dentistry",
+        "smileDesign": "Smile Design",
+        "dentalImplants": "Dental Implants",
+        "generalConsultation": "General Consultation"
+      }
     },
     "info": {
       "address": "Address",
@@ -273,7 +339,10 @@
       "hours": "Working Hours",
       "hoursValue": "Open Daily · Closes 7:00 PM",
       "getDirections": "Get Directions",
-      "chatWhatsApp": "Chat on WhatsApp"
+      "chatWhatsApp": "Chat on WhatsApp",
+      "addressValue": "Hoor Al Aliaa Polyclinic, Al Wasl Road, Al Manar, Umm Suqeim, Dubai",
+      "chatWhatsAppMessage": "Hello, I would like to book a consultation.",
+      "mapTitle": "Hoor Al Aliaa Dental Clinic"
     },
     "social": "Connect on Social"
   },
